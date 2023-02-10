@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System;
 
 namespace Osryden.HexagonFramework.Tests
 {
@@ -14,6 +15,14 @@ namespace Osryden.HexagonFramework.Tests
         public void TestFlatTopHexagonDirectionValues(PointyTopHexagonDirection pointyTopDirection, HexagonDirection direction)
         {
             Assert.AreEqual((int)pointyTopDirection, (int)direction);
+        }
+
+        [Test]
+        public void TestNumberOfMembers()
+        {
+            int expectedNumberOfMembers = 6;
+            int actualNumberOfMembers = Enum.GetNames(typeof(PointyTopHexagonDirection)).Length;
+            Assert.AreEqual(expectedNumberOfMembers, actualNumberOfMembers);
         }
     }
 }
