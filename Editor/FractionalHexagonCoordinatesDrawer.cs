@@ -1,30 +1,7 @@
 ﻿using UnityEditor;
-using UnityEngine;
 
 namespace Osryden.HexagonFramework.Editor
 {
     [CustomPropertyDrawer(typeof(FractionalHexagonCoordinates))]
-    public class FractionalHexagonCoordinatesDrawer : PropertyDrawer
-    {
-        public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
-        {
-            FractionalHexagonCoordinates coordinates = (FractionalHexagonCoordinates)fieldInfo.GetValue(property.serializedObject.targetObject);
-
-            SerializedProperty q = property.FindPropertyRelative("m_Q");
-            SerializedProperty r = property.FindPropertyRelative("m_R");
-
-            position = EditorGUI.PrefixLabel(position, GUIUtility.GetControlID(FocusType.Keyboard), label);
-
-            EditorGUIUtility.labelWidth = 13;
-
-            float width = (position.width - 10) / 3;
-            EditorGUI.PropertyField(new Rect(position.x, position.y, width, position.height), q, new GUIContent(nameof(coordinates.Q)));
-            EditorGUI.PropertyField(new Rect(position.x + width + 5, position.y, width, position.height), r, new GUIContent(nameof(coordinates.R)));
-
-            using (new EditorGUI.DisabledGroupScope(true))
-            {
-                EditorGUI.FloatField(new Rect(position.x + (width * 2) + 10, position.y, width, position.height), new GUIContent(nameof(coordinates.S)), coordinates.S);
-            }
-        }
-    }
+    public class FractionalHexagonCoordinatesDrawer : HexagonCoordinatesDrawerBase<float> { }
 }
