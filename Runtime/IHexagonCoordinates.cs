@@ -1,10 +1,10 @@
 namespace Osryden.HexagonFramework
 {
-    public interface IHexagonCoordinates
+    public interface IHexagonCoordinates<T>
     {
-        int Q { get; }
-        int R { get; }
-        int S { get; }
-        int Length { get; }
+        T Q { get; }
+        T R { get; }
+        T S { get; }
+        T Length { get; }
     }
 }
