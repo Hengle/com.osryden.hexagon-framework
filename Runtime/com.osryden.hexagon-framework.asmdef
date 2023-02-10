@@ -1,0 +1,14 @@
+{
+    "name": "com.osryden.hexagon-framework",
+    "rootNamespace": "Osryden.HexagonFramework",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
