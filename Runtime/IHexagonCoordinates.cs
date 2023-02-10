@@ -5,6 +5,6 @@ namespace Osryden.HexagonFramework
         int Q { get; }
         int R { get; }
         int S { get; }
-        int Magnitude { get; }
+        int Length { get; }
     }
 }

@@ -35,11 +35,11 @@ namespace Osryden.HexagonFramework
         public int Q => m_Q;
         public int R => m_R;
         public int S => -Q + R;
-        public int Magnitude => (Mathf.Abs(Q) + Mathf.Abs(R) + Mathf.Abs(S)) / 2;
+        public int Length => (Mathf.Abs(Q) + Mathf.Abs(R) + Mathf.Abs(S)) / 2;
 
         public static int Distance(HexagonCoordinates a, HexagonCoordinates b)
         {
-            return (a - b).Magnitude;
+            return (a - b).Length;
         }
 
         public override bool Equals(object other)
