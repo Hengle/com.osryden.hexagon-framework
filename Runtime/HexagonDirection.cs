@@ -1,6 +1,6 @@
 ﻿namespace Osryden.HexagonFramework
 {
-    public enum HexagonDirection : uint
+    public enum HexagonDirection
     {
         One = 0,
         Two = 1,

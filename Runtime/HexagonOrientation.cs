@@ -1,6 +1,6 @@
 ﻿namespace Osryden.HexagonFramework
 {
-    public enum HexagonOrientation : uint
+    public enum HexagonOrientation
     {
         FlatTop = 0,
         PointyTop = 1,

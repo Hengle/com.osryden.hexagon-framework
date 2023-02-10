@@ -1,6 +1,6 @@
 ﻿namespace Osryden.HexagonFramework
 {
-    public enum FlatTopHexagonDirection : uint
+    public enum FlatTopHexagonDirection
     {
         North = HexagonDirection.One,
         Northeast = HexagonDirection.Two,
