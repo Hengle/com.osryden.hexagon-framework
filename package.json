@@ -1,0 +1,15 @@
+{
+    "name": "com.osryden.hexagon-framework",
+    "version": "1.0.0",
+    "displayName": "Hexagon Framework",
+    "description": "Framework for working with hexagons.",
+    "unity": "2019.1",
+    "author": {
+        "name": "Oscar Rydén",
+        "url": "https://www.github.com/osryden/"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/osryden/com.osryden.hexagon-framework.git"
+    }
+}
