@@ -42,17 +42,12 @@ namespace Osryden.HexagonFramework
             return (a - b).Length;
         }
 
-        public static Vector3 Position(FractionalHexagonCoordinates coordinates, float angle)
+        public static Vector3 Position(FractionalHexagonCoordinates coordinates, HexagonGeometry geometry)
         {
-            float x = coordinates.Q;
+            float x = coordinates.Q * geometry.HorizontalDistance;
             float y = 0;
-            float z = (coordinates.R + coordinates.S) / 2f;
-            return Quaternion.AngleAxis(angle, Vector3.up) * new Vector3(x, y, z);
-        }
-
-        public static Vector3 Position(FractionalHexagonCoordinates coordinates, HexagonOrientation orientation)
-        {
-            return Position(coordinates, HexagonUtility.GetAngle(orientation));
+            float z = (coordinates.R + coordinates.S) / 2f * geometry.VerticalDistance;
+            return Quaternion.AngleAxis(geometry.Angle, Vector3.up) * new Vector3(x, y, z);
         }
 
         public override bool Equals(object other)
