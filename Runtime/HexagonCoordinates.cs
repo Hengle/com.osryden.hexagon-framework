@@ -125,6 +125,18 @@ namespace Osryden.HexagonFramework
                     yield return coordinates += Adjacent(direction);
         }
 
+        public static IEnumerable<HexagonCoordinates> Spiral(HexagonCoordinates center, int radius)
+        {
+            if (radius < 1)
+                throw new ArgumentOutOfRangeException(nameof(radius), radius, "The minimum value is 1.");
+
+            yield return center;
+
+            for (int i = 1; i <= radius; i++)
+                foreach (HexagonCoordinates coordinates in Ring(center, i))
+                    yield return coordinates;
+        }
+
         public override bool Equals(object other)
         {
             if (other is not HexagonCoordinates)
