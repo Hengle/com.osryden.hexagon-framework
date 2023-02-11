@@ -23,6 +23,16 @@ namespace Osryden.HexagonFramework
             }
         }
 
+        public static float GetSAxis(float q, float r)
+        {
+            return -q + r;
+        }
+
+        public static int GetSAxis(int q, int r)
+        {
+            return Mathf.RoundToInt(GetSAxis((float)q, (float)r));
+        }
+
         public static Quaternion GetRotation(float angle, Vector3 axis)
         {
             return Quaternion.AngleAxis(angle, axis);
