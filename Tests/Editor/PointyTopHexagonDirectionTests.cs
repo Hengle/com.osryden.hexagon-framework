@@ -20,7 +20,7 @@ namespace Osryden.HexagonFramework.Tests
         [Test]
         public void TestNumberOfMembers()
         {
-            int expectedNumberOfMembers = 6;
+            int expectedNumberOfMembers = HexagonUtility.Sides;
             int actualNumberOfMembers = Enum.GetNames(typeof(PointyTopHexagonDirection)).Length;
             Assert.AreEqual(expectedNumberOfMembers, actualNumberOfMembers);
         }
