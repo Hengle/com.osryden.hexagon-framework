@@ -113,6 +113,18 @@ namespace Osryden.HexagonFramework
                     yield return center + new HexagonCoordinates(q, r);
         }
 
+        public static IEnumerable<HexagonCoordinates> Ring(HexagonCoordinates center, int radius)
+        {
+            if (radius < 1)
+                throw new ArgumentOutOfRangeException(nameof(radius), radius, "The minimum value is 1.");
+
+            HexagonCoordinates coordinates = center + (Adjacent(HexagonDirection.Five) * radius);
+
+            foreach (HexagonDirection direction in (HexagonDirection[])Enum.GetValues(typeof(HexagonDirection)))
+                for (int i = 0; i < radius; i++)
+                    yield return coordinates += Adjacent(direction);
+        }
+
         public override bool Equals(object other)
         {
             if (other is not HexagonCoordinates)
