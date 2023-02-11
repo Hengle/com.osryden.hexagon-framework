@@ -38,6 +38,41 @@ namespace Osryden.HexagonFramework
         public int S => HexagonUtility.GetSAxis(Q, R);
         public int Length => (Mathf.Abs(Q) + Mathf.Abs(R) + Mathf.Abs(S)) / 2;
 
+        public static HexagonCoordinates Adjacent(HexagonDirection direction)
+        {
+            return Adjacent((FlatTopHexagonDirection)direction);
+        }
+
+        public static HexagonCoordinates Adjacent(FlatTopHexagonDirection direction)
+        {
+            switch (direction)
+            {
+                case FlatTopHexagonDirection.North: return new HexagonCoordinates(0, 1);
+                case FlatTopHexagonDirection.Northeast: return new HexagonCoordinates(1, 1);
+                case FlatTopHexagonDirection.Southeast: return new HexagonCoordinates(1, 0);
+                case FlatTopHexagonDirection.South: return new HexagonCoordinates(0, -1);
+                case FlatTopHexagonDirection.Southwest: return new HexagonCoordinates(-1, -1);
+                case FlatTopHexagonDirection.Northwest: return new HexagonCoordinates(-1, 0);
+                default:
+                    throw new InvalidOperationException();
+            }
+        }
+
+        public static HexagonCoordinates Adjacent(PointyTopHexagonDirection direction)
+        {
+            switch (direction)
+            {
+                case PointyTopHexagonDirection.Northeast: return new HexagonCoordinates(1, 1);
+                case PointyTopHexagonDirection.East: return new HexagonCoordinates(1, 0);
+                case PointyTopHexagonDirection.Southeast: return new HexagonCoordinates(0, -1);
+                case PointyTopHexagonDirection.Southwest: return new HexagonCoordinates(-1, -1);
+                case PointyTopHexagonDirection.West: return new HexagonCoordinates(-1, 0);
+                case PointyTopHexagonDirection.Northwest: return new HexagonCoordinates(0, 1);
+                default:
+                    throw new InvalidOperationException();
+            }
+        }
+
         public static int Distance(HexagonCoordinates a, HexagonCoordinates b)
         {
             return (a - b).Length;
