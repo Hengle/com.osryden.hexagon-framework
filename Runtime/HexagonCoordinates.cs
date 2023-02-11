@@ -91,6 +91,18 @@ namespace Osryden.HexagonFramework
             return Position(coordinates, HexagonUtility.GetAngle(orientation));
         }
 
+        public static IEnumerable<HexagonCoordinates> Adjacents()
+        {
+            foreach (HexagonDirection direction in (HexagonDirection[])Enum.GetValues(typeof(HexagonDirection)))
+                yield return Adjacent(direction);
+        }
+
+        public static IEnumerable<HexagonCoordinates> Adjacents(HexagonCoordinates coordinates)
+        {
+            foreach (HexagonCoordinates adjacent in Adjacents())
+                yield return coordinates + adjacent;
+        }
+
         public static IEnumerable<HexagonCoordinates> Range(HexagonCoordinates center, int range)
         {
             if (range < 1)
