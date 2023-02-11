@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Osryden.HexagonFramework
 {
     [Serializable]
-    public struct FractionalHexagonCoordinates : IHexagonCoordinates<float>, IEquatable<FractionalHexagonCoordinates>
+    public struct FractionalHexagonCoordinates : IEquatable<FractionalHexagonCoordinates>
     {
         [SerializeField] private float m_Q;
         [SerializeField] private float m_R;
@@ -40,6 +40,19 @@ namespace Osryden.HexagonFramework
         public static float Distance(FractionalHexagonCoordinates a, FractionalHexagonCoordinates b)
         {
             return (a - b).Length;
+        }
+
+        public static Vector3 Position(FractionalHexagonCoordinates coordinates, float angle)
+        {
+            float x = coordinates.Q;
+            float y = 0;
+            float z = (coordinates.R + coordinates.S) / 2f;
+            return Quaternion.AngleAxis(angle, Vector3.up) * new Vector3(x, y, z);
+        }
+
+        public static Vector3 Position(FractionalHexagonCoordinates coordinates, HexagonOrientation orientation)
+        {
+            return Position(coordinates, HexagonUtility.GetAngle(orientation));
         }
 
         public override bool Equals(object other)
