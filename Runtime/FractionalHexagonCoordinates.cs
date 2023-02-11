@@ -45,9 +45,7 @@ namespace Osryden.HexagonFramework
         public override bool Equals(object other)
         {
             if (other is not FractionalHexagonCoordinates)
-            {
                 return false;
-            }
 
             return base.Equals((FractionalHexagonCoordinates)other);
         }

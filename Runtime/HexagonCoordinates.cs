@@ -69,9 +69,7 @@ namespace Osryden.HexagonFramework
         public override bool Equals(object other)
         {
             if (other is not HexagonCoordinates)
-            {
                 return false;
-            }
 
             return base.Equals((HexagonCoordinates)other);
         }
