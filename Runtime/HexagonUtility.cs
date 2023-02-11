@@ -17,7 +17,6 @@ namespace Osryden.HexagonFramework
             {
                 case HexagonOrientation.FlatTop: return FlatTopAngle;
                 case HexagonOrientation.PointyTop: return PointyTopAngle;
-                case HexagonOrientation.Custom: return 0;
                 default:
                     throw new InvalidOperationException();
             }
