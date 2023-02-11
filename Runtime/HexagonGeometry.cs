@@ -6,24 +6,24 @@ namespace Osryden.HexagonFramework
     [Serializable]
     public struct HexagonGeometry : IEquatable<HexagonGeometry>
     {
-        [SerializeField] private float m_Size;
         [SerializeField] private HexagonOrientation m_Orientation;
+        [SerializeField] private float m_Size;
 
-        public HexagonGeometry(float size, HexagonOrientation orientation)
+        public HexagonGeometry(HexagonOrientation orientation, float size)
         {
-            m_Size = size;
             m_Orientation = orientation;
+            m_Size = size;
         }
 
-        public float Size
-        {
-            get => m_Size;
-            set => m_Size = value;
-        }
         public HexagonOrientation Orientation
         {
             get => m_Orientation;
             set => m_Orientation = value;
+        }
+        public float Size
+        {
+            get => m_Size;
+            set => m_Size = value;
         }
         public float Angle => HexagonUtility.GetAngle(Orientation);
         public float Width => Size * 2;
@@ -51,7 +51,7 @@ namespace Osryden.HexagonFramework
 
         public override string ToString()
         {
-            return $"{nameof(HexagonGeometry)}[size: {Size}; orientation: {Orientation}]";
+            return $"{nameof(HexagonGeometry)}[orientation: {Orientation}; size: {Size}]";
         }
 
         public static bool operator ==(HexagonGeometry left, HexagonGeometry right)
