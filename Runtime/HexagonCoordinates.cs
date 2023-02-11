@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Osryden.HexagonFramework
@@ -53,6 +54,16 @@ namespace Osryden.HexagonFramework
         public static Vector3 Position(HexagonCoordinates coordinates, HexagonOrientation orientation)
         {
             return Position(coordinates, HexagonUtility.GetAngle(orientation));
+        }
+
+        public static IEnumerable<HexagonCoordinates> Range(HexagonCoordinates center, int range)
+        {
+            if (range < 1)
+                throw new ArgumentOutOfRangeException(nameof(range), range, "");
+
+            for (int q = -range; q <= range; q++)
+                for (int r = Mathf.Max(-range, q - range); r <= Mathf.Min(range, q + range); r++)
+                    yield return center + new HexagonCoordinates(q, r);
         }
 
         public override bool Equals(object other)
