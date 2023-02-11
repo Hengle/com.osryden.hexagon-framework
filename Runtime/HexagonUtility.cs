@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 namespace Osryden.HexagonFramework
 {
@@ -20,6 +21,16 @@ namespace Osryden.HexagonFramework
                 default:
                     throw new InvalidOperationException();
             }
+        }
+
+        public static Quaternion GetRotation(float angle, Vector3 axis)
+        {
+            return Quaternion.AngleAxis(angle, axis);
+        }
+
+        public static Quaternion GetRotation(HexagonOrientation orientation, Vector3 axis)
+        {
+            return GetRotation(GetAngle(orientation), axis);
         }
     }
 }
