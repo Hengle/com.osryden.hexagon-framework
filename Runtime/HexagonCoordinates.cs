@@ -42,6 +42,19 @@ namespace Osryden.HexagonFramework
             return (a - b).Length;
         }
 
+        public static Vector3 Position(HexagonCoordinates coordinates, float angle)
+        {
+            float x = coordinates.Q;
+            float y = 0;
+            float z = (coordinates.R + coordinates.S) / 2f;
+            return Quaternion.AngleAxis(angle, Vector3.up) * new Vector3(x, y, z);
+        }
+
+        public static Vector3 Position(HexagonCoordinates coordinates, HexagonOrientation orientation)
+        {
+            return Position(coordinates, HexagonUtility.GetAngle(orientation));
+        }
+
         public override bool Equals(object other)
         {
             if (other is not HexagonCoordinates)
