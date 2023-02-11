@@ -73,6 +73,28 @@ namespace Osryden.HexagonFramework
             }
         }
 
+        public static HexagonCoordinates Round(FractionalHexagonCoordinates coordinates)
+        {
+            int q = Mathf.RoundToInt(coordinates.Q);
+            int r = Mathf.RoundToInt(coordinates.R);
+            int s = Mathf.RoundToInt(coordinates.S);
+
+            float qDifference = Mathf.Abs(q - coordinates.Q);
+            float rDifference = Mathf.Abs(r - coordinates.R);
+            float sDifference = Mathf.Abs(s - coordinates.S);
+
+            if ((qDifference > rDifference) && (qDifference > sDifference))
+            {
+                q = r - s;
+            }
+            else if (rDifference > sDifference)
+            {
+                r = q + s;
+            }
+
+            return new HexagonCoordinates(q, r);
+        }
+
         public static int Distance(HexagonCoordinates a, HexagonCoordinates b)
         {
             return (a - b).Length;
