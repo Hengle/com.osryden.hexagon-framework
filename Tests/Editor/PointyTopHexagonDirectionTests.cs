@@ -20,9 +20,9 @@ namespace Osryden.HexagonFramework.Tests
         [Test]
         public void TestNumberOfMembers()
         {
-            int expectedNumberOfMembers = HexagonUtility.Sides;
-            int actualNumberOfMembers = Enum.GetNames(typeof(PointyTopHexagonDirection)).Length;
-            Assert.AreEqual(expectedNumberOfMembers, actualNumberOfMembers);
+            int expected = HexagonUtility.Sides;
+            int actual = Enum.GetNames(typeof(PointyTopHexagonDirection)).Length;
+            Assert.AreEqual(expected, actual);
         }
     }
 }
