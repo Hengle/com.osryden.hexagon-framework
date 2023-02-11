@@ -4,6 +4,7 @@ namespace Osryden.HexagonFramework
 {
     public static class HexagonUtility
     {
+        public static int Adjacents { get; } = 6;
         public static int Corners { get; } = 6;
         public static int Sides { get; } = 6;
         public static float FlatTopAngle { get; } = 0;
