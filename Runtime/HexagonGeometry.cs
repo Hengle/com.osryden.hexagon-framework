@@ -21,12 +21,12 @@ namespace Osryden.HexagonFramework
         public const int VERTICES = 6;
 
         /// <summary>
-        /// The angle of the flat-top orientation.
+        /// The flat-topped hexagon orientation angle.
         /// </summary>
         public const float FLAT_TOP_ANGLE = 0;
 
         /// <summary>
-        /// The angle of the pointy-top orientation.
+        /// The pointy-topped hexagon orientation angle.
         /// </summary>
         public const float POINTY_TOP_ANGLE = -30;
 
