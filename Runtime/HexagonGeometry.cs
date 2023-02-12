@@ -40,17 +40,17 @@ namespace Osryden.HexagonFramework
         }
 
         /// <summary>
-        /// Gets a flat-top orientation geometry with the size of 1.
+        /// Returns a flat-top orientation geometry with the size of 1.
         /// </summary>
         public static HexagonGeometry FlatTopGeometry { get; } = new HexagonGeometry(HexagonOrientation.FlatTop, 1);
 
         /// <summary>
-        /// Gets a pointy-top orientation geometry with the size of 1.
+        /// Returns a pointy-top orientation geometry with the size of 1.
         /// </summary>
         public static HexagonGeometry PointyTopGeometry { get; } = new HexagonGeometry(HexagonOrientation.PointyTop, 1);
 
         /// <summary>
-        /// The orientation of the hexagon.
+        /// The hexagon orientation.
         /// </summary>
         public HexagonOrientation Orientation
         {
@@ -59,7 +59,7 @@ namespace Osryden.HexagonFramework
         }
 
         /// <summary>
-        /// The circumradius of the hexagon.
+        /// The hexagon circumradius.
         /// </summary>
         public float Size
         {
@@ -68,32 +68,32 @@ namespace Osryden.HexagonFramework
         }
 
         /// <summary>
-        /// The orientation angle of the hexagon.
+        /// Returns the hexagon orientation angle.
         /// </summary>
         public float Angle => OrientationAngle(Orientation);
 
         /// <summary>
-        /// The width of the hexagon.
+        /// Returns the hexagon width.
         /// </summary>
         public float Width => Size * 2;
 
         /// <summary>
-        /// The height of the hexagon.
+        /// Returns the hexagon height.
         /// </summary>
         public float Height => Size * Mathf.Sqrt(3);
 
         /// <summary>
-        /// The horizontal distance between adjacent hexagons centers.
+        /// Returns the horizontal distance between adjacent hexagons centers.
         /// </summary>
         public float HorizontalDistance => Width * 3 / 4;
 
         /// <summary>
-        /// The vertical distance between adjacent hexagons centers.
+        /// Returns the vertical distance between adjacent hexagons centers.
         /// </summary>
         public float VerticalDistance => Height;
 
         /// <summary>
-        /// Gets all vertices of the hexagon.
+        /// Returns all hexagon vertices.
         /// </summary>
         public IEnumerable<Vector3> Vertices
         {
