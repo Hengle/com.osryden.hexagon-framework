@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace Osryden.HexagonFramework.Editor
 {
+    /// <summary>
+    /// Custom property drawer for <see cref="HexagonCoordinates"/>.
+    /// </summary>
     [CustomPropertyDrawer(typeof(HexagonCoordinates))]
     public class HexagonCoordinatesDrawer : PropertyDrawer
     {
