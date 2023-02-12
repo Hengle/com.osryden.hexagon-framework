@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Osryden.HexagonFramework
@@ -30,6 +31,18 @@ namespace Osryden.HexagonFramework
         public float Height => Size * Mathf.Sqrt(3);
         public float HorizontalDistance => Width * 3 / 4;
         public float VerticalDistance => Height;
+        public IEnumerable<Vector3> Corners
+        {
+            get
+            {
+                for (int i = 0; i < HexagonUtility.Corners; i++)
+                {
+                    float degrees = (60 * i) - Angle;
+                    float radians = Mathf.PI / 180 * degrees;
+                    yield return new Vector3(Size * Mathf.Cos(radians), 0, Size * Mathf.Sin(radians));
+                }
+            }
+        }
 
         public override bool Equals(object other)
         {
