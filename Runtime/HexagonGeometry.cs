@@ -42,12 +42,15 @@ namespace Osryden.HexagonFramework
             get
             {
                 for (int i = 0; i < VERTICES; i++)
-                {
-                    float degrees = (60 * i) - Angle;
-                    float radians = Mathf.PI / 180 * degrees;
-                    yield return new Vector3(Size * Mathf.Cos(radians), 0, Size * Mathf.Sin(radians));
-                }
+                    yield return Vertex(Size, Angle, i);
             }
+        }
+
+        public static Vector3 Vertex(float size, float angle, int i)
+        {
+            float degrees = (60 * i) - angle;
+            float radians = Mathf.PI / 180 * degrees;
+            return new Vector3(size * Mathf.Cos(radians), 0, size * Mathf.Sin(radians));
         }
 
         public static float OrientationAngle(HexagonOrientation orientation)
