@@ -40,12 +40,12 @@ namespace Osryden.HexagonFramework
         }
 
         /// <summary>
-        /// Returns a flat-top orientation geometry with the size of 1.
+        /// Shorthand for <see cref="HexagonGeometry"/>(HexagonOrientation.FlatTop, 1).
         /// </summary>
         public static HexagonGeometry FlatTopGeometry { get; } = new HexagonGeometry(HexagonOrientation.FlatTop, 1);
 
         /// <summary>
-        /// Returns a pointy-top orientation geometry with the size of 1.
+        /// Shorthand for <see cref="HexagonGeometry"/>(HexagonOrientation.PointyTop, 1).
         /// </summary>
         public static HexagonGeometry PointyTopGeometry { get; } = new HexagonGeometry(HexagonOrientation.PointyTop, 1);
 
