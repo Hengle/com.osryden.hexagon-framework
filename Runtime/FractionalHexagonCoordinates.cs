@@ -34,7 +34,7 @@ namespace Osryden.HexagonFramework
 
         public float Q => m_Q;
         public float R => m_R;
-        public float S => HexagonUtility.GetSAxis(Q, R);
+        public float S => -Q + R;
         public float Length => (Mathf.Abs(Q) + Mathf.Abs(R) + Mathf.Abs(S)) / 2;
 
         public static float Distance(FractionalHexagonCoordinates a, FractionalHexagonCoordinates b)
