@@ -8,7 +8,7 @@ namespace Osryden.HexagonFramework
     public struct HexagonGeometry : IEquatable<HexagonGeometry>
     {
         public const int VERTICES = 6;
-        public const int SIDES = 6;
+        public const int EDGES = 6;
         public const float FLAT_TOP_ANGLE = 0;
         public const float POINTY_TOP_ANGLE = -30;
 
