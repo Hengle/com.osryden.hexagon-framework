@@ -1,7 +1,7 @@
 namespace Osryden.HexagonFramework
 {
     /// <summary>
-    /// The directions of a pointy-topped hexagon.
+    /// Pointy-topped hexagon directions.
     /// </summary>
     public enum PointyTopHexagonDirection
     {

@@ -1,7 +1,7 @@
 ﻿namespace Osryden.HexagonFramework
 {
     /// <summary>
-    /// The directions of a hexagon.
+    /// Hexagon directions.
     /// </summary>
     public enum HexagonDirection
     {

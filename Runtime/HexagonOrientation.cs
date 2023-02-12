@@ -1,17 +1,17 @@
 ﻿namespace Osryden.HexagonFramework
 {
     /// <summary>
-    /// The orientations of of a hexagon.
+    /// Hexagon orientations.
     /// </summary>
     public enum HexagonOrientation
     {
         /// <summary>
-        /// The orientation of a flat-topped hexagon.
+        /// Flat-topped hexagon orientation.
         /// </summary>
         FlatTop = 0,
 
         /// <summary>
-        /// The orientation of a pointy-topped hexagon.
+        /// Pointy-topped hexagon orientation.
         /// </summary>
         PointyTop = 1
     }

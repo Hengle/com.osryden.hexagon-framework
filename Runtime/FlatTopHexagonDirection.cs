@@ -1,7 +1,7 @@
 ﻿namespace Osryden.HexagonFramework
 {
     /// <summary>
-    /// The directions of a flat-topped hexagon.
+    /// Flat-topped hexagon directions.
     /// </summary>
     public enum FlatTopHexagonDirection
     {
