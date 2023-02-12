@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace Osryden.HexagonFramework
 {
+    /// <summary>
+    /// Representation of fractional hexagon coordinates.
+    /// </summary>
     [Serializable]
     public struct FractionalHexagonCoordinates : IEquatable<FractionalHexagonCoordinates>
     {
