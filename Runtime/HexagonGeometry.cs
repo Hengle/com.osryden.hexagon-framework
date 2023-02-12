@@ -40,6 +40,16 @@ namespace Osryden.HexagonFramework
         }
 
         /// <summary>
+        /// Gets a flat-top orientation geometry with the size of 1.
+        /// </summary>
+        public static HexagonGeometry FlatTopGeometry { get; } = new HexagonGeometry(HexagonOrientation.FlatTop, 1);
+
+        /// <summary>
+        /// Gets a pointy-top orientation geometry with the size of 1.
+        /// </summary>
+        public static HexagonGeometry PointyTopGeometry { get; } = new HexagonGeometry(HexagonOrientation.PointyTop, 1);
+
+        /// <summary>
         /// The orientation of the hexagon.
         /// </summary>
         public HexagonOrientation Orientation
@@ -83,7 +93,7 @@ namespace Osryden.HexagonFramework
         public float VerticalDistance => Height;
 
         /// <summary>
-        /// Gets all vertices of the hexagon. 
+        /// Gets all vertices of the hexagon.
         /// </summary>
         public IEnumerable<Vector3> Vertices
         {
