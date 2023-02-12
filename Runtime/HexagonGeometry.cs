@@ -7,7 +7,6 @@ namespace Osryden.HexagonFramework
     [Serializable]
     public struct HexagonGeometry : IEquatable<HexagonGeometry>
     {
-        public const int ADJACENTS = 6;
         public const int VERTICES = 6;
         public const int SIDES = 6;
         public const float FLAT_TOP_ANGLE = 0;
