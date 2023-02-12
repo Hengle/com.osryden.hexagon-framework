@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Osryden.HexagonFramework
 {
+    /// <summary>
+    /// Representation of hexagon geometry.
+    /// </summary>
     [Serializable]
     public struct HexagonGeometry : IEquatable<HexagonGeometry>
     {
