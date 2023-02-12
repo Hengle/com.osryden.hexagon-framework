@@ -7,9 +7,24 @@ namespace Osryden.HexagonFramework
     [Serializable]
     public struct HexagonGeometry : IEquatable<HexagonGeometry>
     {
-        public const int VERTICES = 6;
+        /// <summary>
+        /// The number of edges in a hexagon.
+        /// </summary>
         public const int EDGES = 6;
+
+        /// <summary>
+        /// The number of vertices in a hexagon.
+        /// </summary>
+        public const int VERTICES = 6;
+
+        /// <summary>
+        /// The angle of the flat-top orientation.
+        /// </summary>
         public const float FLAT_TOP_ANGLE = 0;
+
+        /// <summary>
+        /// The angle of the pointy-top orientation.
+        /// </summary>
         public const float POINTY_TOP_ANGLE = -30;
 
         [SerializeField] private HexagonOrientation m_Orientation;
@@ -21,21 +36,52 @@ namespace Osryden.HexagonFramework
             m_Size = size;
         }
 
+        /// <summary>
+        /// The orientation of the hexagon.
+        /// </summary>
         public HexagonOrientation Orientation
         {
             get => m_Orientation;
             set => m_Orientation = value;
         }
+
+        /// <summary>
+        /// The circumradius of the hexagon.
+        /// </summary>
         public float Size
         {
             get => m_Size;
             set => m_Size = value;
         }
+
+        /// <summary>
+        /// The orientation angle of the hexagon.
+        /// </summary>
         public float Angle => OrientationAngle(Orientation);
+
+        /// <summary>
+        /// The width of the hexagon.
+        /// </summary>
         public float Width => Size * 2;
+
+        /// <summary>
+        /// The height of the hexagon.
+        /// </summary>
         public float Height => Size * Mathf.Sqrt(3);
+
+        /// <summary>
+        /// The horizontal distance between adjacent hexagons centers.
+        /// </summary>
         public float HorizontalDistance => Width * 3 / 4;
+
+        /// <summary>
+        /// The vertical distance between adjacent hexagons centers.
+        /// </summary>
         public float VerticalDistance => Height;
+
+        /// <summary>
+        /// Gets all vertices of the hexagon. 
+        /// </summary>
         public IEnumerable<Vector3> Vertices
         {
             get
