@@ -105,7 +105,7 @@ namespace Osryden.HexagonFramework
             float x = coordinates.Q * geometry.HorizontalDistance;
             float y = 0;
             float z = (coordinates.R + coordinates.S) / 2f * geometry.VerticalDistance;
-            return Quaternion.AngleAxis(geometry.Angle, Vector3.up) * new Vector3(x, y, z);
+            return HexagonGeometry.RotationAxis(geometry.Orientation, Vector3.up) * new Vector3(x, y, z);
         }
 
         public static IEnumerable<HexagonCoordinates> Adjacents()
