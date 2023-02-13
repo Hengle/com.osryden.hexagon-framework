@@ -28,19 +28,19 @@ namespace Osryden.HexagonFramework
         public static HexagonCoordinates Origin { get; } = new HexagonCoordinates(0, 0);
 
         /// <summary>
-        /// Returns the Q, R, S coordinates using an index of 0, 1, 2 respectively.
+        /// Returns the coordinate of the specified <paramref name="axis"/>.
         /// </summary>
-        public int this[int index]
+        public int this[HexagonCoordinateAxis axis]
         {
             get
             {
-                switch (index)
+                switch (axis)
                 {
-                    case 0: return Q;
-                    case 1: return R;
-                    case 2: return S;
+                    case HexagonCoordinateAxis.Q: return Q;
+                    case HexagonCoordinateAxis.R: return R;
+                    case HexagonCoordinateAxis.S: return S;
                     default:
-                        throw new IndexOutOfRangeException($"Invalid index: {index}!");
+                        throw new InvalidOperationException();
                 }
             }
         }
