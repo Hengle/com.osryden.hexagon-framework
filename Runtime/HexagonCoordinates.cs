@@ -172,6 +172,49 @@ namespace Osryden.HexagonFramework
         }
 
         /// <summary>
+        /// Returns a line of coordinates of the specified <paramref name="length"/> in the <paramref name="direction"/> starting from <paramref name="origin"/>.
+        /// </summary>
+        public static IEnumerable<HexagonCoordinates> Line(HexagonCoordinates origin, HexagonCoordinates direction, int length)
+        {
+            if (length < 0)
+                throw new ArgumentOutOfRangeException(nameof(length), length, "The minimum value is 0.");
+
+            yield return origin;
+
+            if (length > 0)
+            {
+                HexagonCoordinates coordinates = origin;
+
+                for (int i = 0; i < length; i++)
+                    yield return coordinates += direction;
+            }
+        }
+
+        /// <summary>
+        /// Returns a line of coordinates of the specified <paramref name="length"/> in the <paramref name="direction"/> starting from <paramref name="origin"/>.
+        /// </summary>
+        public static IEnumerable<HexagonCoordinates> Line(HexagonCoordinates origin, HexagonDirection direction, int length)
+        {
+            return Line(origin, Adjacent(direction), length);
+        }
+
+        /// <summary>
+        /// Returns a line of coordinates of the specified <paramref name="length"/> in the <paramref name="direction"/> starting from <paramref name="origin"/>.
+        /// </summary>
+        public static IEnumerable<HexagonCoordinates> Line(HexagonCoordinates origin, FlatTopHexagonDirection direction, int length)
+        {
+            return Line(origin, Adjacent(direction), length);
+        }
+
+        /// <summary>
+        /// Returns a line of coordinates of the specified <paramref name="length"/> in the <paramref name="direction"/> starting from <paramref name="origin"/>.
+        /// </summary>
+        public static IEnumerable<HexagonCoordinates> Line(HexagonCoordinates origin, PointyTopHexagonDirection direction, int length)
+        {
+            return Line(origin, Adjacent(direction), length);
+        }
+
+        /// <summary>
         /// Returns all coordinates within the <paramref name="range"/> from the <paramref name="center"/>.
         /// </summary>
         public static IEnumerable<HexagonCoordinates> Range(HexagonCoordinates center, int range)
