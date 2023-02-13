@@ -39,6 +39,13 @@ namespace Osryden.HexagonFramework
         public static HexagonCoordinates PointyTopWestAdjacent { get; } = new HexagonCoordinates(-1, 0);
         public static HexagonCoordinates PointyTopNorthwestAdjacent { get; } = new HexagonCoordinates(0, 1);
 
+        public static HexagonCoordinates PointyTopNorthDiagonal { get; } = new HexagonCoordinates(1, 2);
+        public static HexagonCoordinates PointyTopNortheastDiagonal { get; } = new HexagonCoordinates(2, 1);
+        public static HexagonCoordinates PointyTopSoutheastDiagonal { get; } = new HexagonCoordinates(1, -1);
+        public static HexagonCoordinates PointyTopSouthDiagonal { get; } = new HexagonCoordinates(-1, -2);
+        public static HexagonCoordinates PointyTopSouthwestDiagonal { get; } = new HexagonCoordinates(-2, -1);
+        public static HexagonCoordinates PointyTopNorthwestDiagonal { get; } = new HexagonCoordinates(-1, 1);
+
         public int this[HexagonCoordinateAxis axis]
         {
             get
