@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Osryden.HexagonFramework
@@ -112,6 +113,21 @@ namespace Osryden.HexagonFramework
             float y = 0;
             float z = (coordinates.R + coordinates.S) / 2f * geometry.VerticalDistance;
             return Quaternion.AngleAxis(geometry.Angle, Vector3.up) * new Vector3(x, y, z);
+        }
+
+        /// <summary>
+        /// Returns rotated coordinates of the <paramref name="origin"/> coordinates in the <paramref name="clockwise"/> direction.
+        /// </summary>
+        /// <param name="origin">Starting coordinates for rotation.</param>
+        /// <param name="clockwise">Rotation direction.</param>
+        /// <param name="rotations">Number of rotations.</param>
+        public static IEnumerable<FractionalHexagonCoordinates> Rotations(FractionalHexagonCoordinates origin, bool clockwise, int rotations)
+        {
+            if (rotations < 1)
+                throw new ArgumentOutOfRangeException(nameof(rotations), rotations, "The minimum value is 1.");
+
+            for (int i = 1; i <= rotations; i++)
+                yield return Rotate(origin, clockwise);
         }
 
         public override bool Equals(object other)
