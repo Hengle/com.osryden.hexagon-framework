@@ -65,6 +65,14 @@ namespace Osryden.HexagonFramework
         public float Length => (Mathf.Abs(Q) + Mathf.Abs(R) + Mathf.Abs(S)) / 2;
 
         /// <summary>
+        /// Linearly iterpolates between two coordinates.
+        /// </summary>
+        public static FractionalHexagonCoordinates Lerp(FractionalHexagonCoordinates a, FractionalHexagonCoordinates b, float t)
+        {
+            return new FractionalHexagonCoordinates(Mathf.Lerp(a.Q, b.Q, t), Mathf.Lerp(a.R, b.R, t));
+        }
+
+        /// <summary>
         /// Returns the distance between two coordinates.
         /// </summary>
         public static float Distance(FractionalHexagonCoordinates a, FractionalHexagonCoordinates b)
