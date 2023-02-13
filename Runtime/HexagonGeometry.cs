@@ -4,30 +4,12 @@ using UnityEngine;
 
 namespace Osryden.HexagonFramework
 {
-    /// <summary>
-    /// Representation of hexagon geometry.
-    /// </summary>
     [Serializable]
     public struct HexagonGeometry : IEquatable<HexagonGeometry>
     {
-        /// <summary>
-        /// The number of edges in a hexagon.
-        /// </summary>
         public const int EDGES = 6;
-
-        /// <summary>
-        /// The number of vertices in a hexagon.
-        /// </summary>
         public const int VERTICES = 6;
-
-        /// <summary>
-        /// The flat-topped hexagon orientation angle.
-        /// </summary>
         public const float FLAT_TOP_ANGLE = 0;
-
-        /// <summary>
-        /// The pointy-topped hexagon orientation angle.
-        /// </summary>
         public const float POINTY_TOP_ANGLE = -30;
 
         [SerializeField] private HexagonOrientation m_Orientation;
@@ -39,62 +21,24 @@ namespace Osryden.HexagonFramework
             m_Size = size;
         }
 
-        /// <summary>
-        /// Shorthand for <see cref="HexagonGeometry"/>(HexagonOrientation.FlatTop, 1).
-        /// </summary>
         public static HexagonGeometry FlatTopGeometry { get; } = new HexagonGeometry(HexagonOrientation.FlatTop, 1);
-
-        /// <summary>
-        /// Shorthand for <see cref="HexagonGeometry"/>(HexagonOrientation.PointyTop, 1).
-        /// </summary>
         public static HexagonGeometry PointyTopGeometry { get; } = new HexagonGeometry(HexagonOrientation.PointyTop, 1);
 
-        /// <summary>
-        /// The hexagon orientation.
-        /// </summary>
         public HexagonOrientation Orientation
         {
             get => m_Orientation;
             set => m_Orientation = value;
         }
-
-        /// <summary>
-        /// The hexagon circumradius.
-        /// </summary>
         public float Size
         {
             get => m_Size;
             set => m_Size = value;
         }
-
-        /// <summary>
-        /// Returns the hexagon orientation angle.
-        /// </summary>
         public float Angle => OrientationAngle(Orientation);
-
-        /// <summary>
-        /// Returns the hexagon width.
-        /// </summary>
         public float Width => Size * 2;
-
-        /// <summary>
-        /// Returns the hexagon height.
-        /// </summary>
         public float Height => Size * Mathf.Sqrt(3);
-
-        /// <summary>
-        /// Returns the horizontal distance between adjacent hexagons centers.
-        /// </summary>
         public float HorizontalDistance => Width * 3 / 4;
-
-        /// <summary>
-        /// Returns the vertical distance between adjacent hexagons centers.
-        /// </summary>
         public float VerticalDistance => Height;
-
-        /// <summary>
-        /// Returns all hexagon vertices.
-        /// </summary>
         public IEnumerable<Vector3> Vertices
         {
             get
@@ -104,9 +48,6 @@ namespace Osryden.HexagonFramework
             }
         }
 
-        /// <summary>
-        /// Returns the vertex position of the specified <paramref name="index"/> relative to the <paramref name="size"/> and <paramref name="angle"/>.
-        /// </summary>
         public static Vector3 Vertex(float size, float angle, int index)
         {
             if ((index < 0) || (index >= VERTICES))
@@ -117,9 +58,6 @@ namespace Osryden.HexagonFramework
             return new Vector3(size * Mathf.Cos(radians), 0, size * Mathf.Sin(radians));
         }
 
-        /// <summary>
-        /// Returns the angle of the specified <paramref name="orientation"/>.
-        /// </summary>
         public static float OrientationAngle(HexagonOrientation orientation)
         {
             switch (orientation)
@@ -131,17 +69,11 @@ namespace Osryden.HexagonFramework
             }
         }
 
-        /// <summary>
-        /// Returns the rotation of the <paramref name="angle"/> around the <paramref name="axis"/>.
-        /// </summary>
         public static Quaternion RotationAxis(float angle, Vector3 axis)
         {
             return Quaternion.AngleAxis(angle, axis);
         }
 
-        /// <summary>
-        /// Returns the rotation of the <paramref name="orientation"/> around the <paramref name="axis"/>.
-        /// </summary>
         public static Quaternion RotationAxis(HexagonOrientation orientation, Vector3 axis)
         {
             return RotationAxis(OrientationAngle(orientation), axis);

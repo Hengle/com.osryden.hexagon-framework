@@ -3,9 +3,6 @@ using UnityEngine;
 
 namespace Osryden.HexagonFramework.Editor
 {
-    /// <summary>
-    /// Custom property drawer for <see cref="FractionalHexagonCoordinates"/>.
-    /// </summary>
     [CustomPropertyDrawer(typeof(FractionalHexagonCoordinates))]
     public class FractionalHexagonCoordinatesDrawer : PropertyDrawer
     {

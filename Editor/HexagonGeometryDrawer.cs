@@ -3,9 +3,6 @@ using UnityEngine;
 
 namespace Osryden.HexagonFramework.Editor
 {
-    /// <summary>
-    /// Custom property drawer for <see cref="HexagonGeometry"/>.
-    /// </summary>
     [CustomPropertyDrawer(typeof(HexagonGeometry))]
     public class HexagonGeometryDrawer : PropertyDrawer
     {
