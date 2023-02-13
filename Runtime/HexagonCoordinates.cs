@@ -218,6 +218,18 @@ namespace Osryden.HexagonFramework
                 yield return coordinates + adjacent;
         }
 
+        public static IEnumerable<HexagonCoordinates> Diagonals()
+        {
+            foreach (HexagonDiagonal diagonal in (HexagonDiagonal[])Enum.GetValues(typeof(HexagonDiagonal)))
+                yield return Diagonal(diagonal);
+        }
+
+        public static IEnumerable<HexagonCoordinates> Diagonals(HexagonCoordinates coordinates)
+        {
+            foreach (HexagonCoordinates diagonal in Diagonals())
+                yield return coordinates + diagonal;
+        }
+
         public static IEnumerable<HexagonCoordinates> Line(HexagonCoordinates a, HexagonCoordinates b)
         {
             int distance = Distance(a, b);
