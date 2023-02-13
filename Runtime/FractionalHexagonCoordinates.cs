@@ -80,6 +80,14 @@ namespace Osryden.HexagonFramework
         }
 
         /// <summary>
+        /// Returns the specified <paramref name="coordinates"/> rotated 30 degrees in the <paramref name="clockwise"/> direction.
+        /// </summary>
+        public static FractionalHexagonCoordinates Rotate(FractionalHexagonCoordinates coordinates, bool clockwise)
+        {
+            return clockwise ? new FractionalHexagonCoordinates(coordinates.R, coordinates.S) : new FractionalHexagonCoordinates(-coordinates.S, -coordinates.Q);
+        }
+
+        /// <summary>
         /// Linearly iterpolates between two coordinates.
         /// </summary>
         public static FractionalHexagonCoordinates Lerp(FractionalHexagonCoordinates a, FractionalHexagonCoordinates b, float t)
