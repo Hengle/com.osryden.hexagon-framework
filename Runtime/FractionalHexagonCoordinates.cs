@@ -65,6 +65,21 @@ namespace Osryden.HexagonFramework
         public float Length => (Mathf.Abs(Q) + Mathf.Abs(R) + Mathf.Abs(S)) / 2;
 
         /// <summary>
+        /// Returns the reflected cooridnates across the <paramref name="axis"/> of the specified <paramref name="coordinates"/>.
+        /// </summary>
+        public static FractionalHexagonCoordinates Reflect(FractionalHexagonCoordinates coordinates, HexagonCoordinateAxis axis)
+        {
+            switch (axis)
+            {
+                case HexagonCoordinateAxis.Q: return new FractionalHexagonCoordinates(coordinates.Q, -coordinates.S);
+                case HexagonCoordinateAxis.R: return new FractionalHexagonCoordinates(coordinates.S, coordinates.R);
+                case HexagonCoordinateAxis.S: return new FractionalHexagonCoordinates(-coordinates.R, -coordinates.Q);
+                default:
+                    throw new InvalidOperationException();
+            }
+        }
+
+        /// <summary>
         /// Linearly iterpolates between two coordinates.
         /// </summary>
         public static FractionalHexagonCoordinates Lerp(FractionalHexagonCoordinates a, FractionalHexagonCoordinates b, float t)
