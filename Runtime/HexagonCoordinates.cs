@@ -110,6 +110,21 @@ namespace Osryden.HexagonFramework
         }
 
         /// <summary>
+        /// Returns the reflected cooridnates across the <paramref name="axis"/> of the specified <paramref name="coordinates"/>.
+        /// </summary>
+        public static HexagonCoordinates Reflect(HexagonCoordinates coordinates, HexagonCoordinateAxis axis)
+        {
+            switch (axis)
+            {
+                case HexagonCoordinateAxis.Q: return new HexagonCoordinates(coordinates.Q, -coordinates.S);
+                case HexagonCoordinateAxis.R: return new HexagonCoordinates(coordinates.S, coordinates.R);
+                case HexagonCoordinateAxis.S: return new HexagonCoordinates(-coordinates.R, -coordinates.Q);
+                default:
+                    throw new InvalidOperationException();
+            }
+        }
+
+        /// <summary>
         /// Rounds a fractional coordinates.
         /// </summary>
         public static HexagonCoordinates Round(FractionalHexagonCoordinates coordinates)
