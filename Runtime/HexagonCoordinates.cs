@@ -239,7 +239,7 @@ namespace Osryden.HexagonFramework
                 yield return Lerp(a, b, i * step);
         }
 
-        public static IEnumerable<HexagonCoordinates> Line(HexagonCoordinates origin, HexagonCoordinates direction, int length)
+        public static IEnumerable<HexagonCoordinates> Line(HexagonCoordinates origin, int length, HexagonCoordinates direction)
         {
             if (length < 0)
                 throw new ArgumentOutOfRangeException(nameof(length), length, "The minimum value is 0.");
@@ -255,19 +255,19 @@ namespace Osryden.HexagonFramework
             }
         }
 
-        public static IEnumerable<HexagonCoordinates> Line(HexagonCoordinates origin, HexagonDirection direction, int length)
+        public static IEnumerable<HexagonCoordinates> Line(HexagonCoordinates origin, int length, HexagonDirection direction)
         {
-            return Line(origin, Adjacent(direction), length);
+            return Line(origin, length, Adjacent(direction));
         }
 
-        public static IEnumerable<HexagonCoordinates> Line(HexagonCoordinates origin, FlatTopHexagonDirection direction, int length)
+        public static IEnumerable<HexagonCoordinates> Line(HexagonCoordinates origin, int length, FlatTopHexagonDirection direction)
         {
-            return Line(origin, Adjacent(direction), length);
+            return Line(origin, length, Adjacent(direction));
         }
 
-        public static IEnumerable<HexagonCoordinates> Line(HexagonCoordinates origin, PointyTopHexagonDirection direction, int length)
+        public static IEnumerable<HexagonCoordinates> Line(HexagonCoordinates origin, int length, PointyTopHexagonDirection direction)
         {
-            return Line(origin, Adjacent(direction), length);
+            return Line(origin, length, Adjacent(direction));
         }
 
         public static IEnumerable<HexagonCoordinates> Range(HexagonCoordinates center, int range)
