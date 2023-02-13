@@ -125,6 +125,14 @@ namespace Osryden.HexagonFramework
         }
 
         /// <summary>
+        /// Returns the specified <paramref name="coordinates"/> rotated 30 degrees in the <paramref name="clockwise"/> direction.
+        /// </summary>
+        public static HexagonCoordinates Rotate(HexagonCoordinates coordinates, bool clockwise)
+        {
+            return clockwise ? new HexagonCoordinates(coordinates.R, coordinates.S) : new HexagonCoordinates(-coordinates.S, -coordinates.Q);
+        }
+
+        /// <summary>
         /// Rounds a fractional coordinates.
         /// </summary>
         public static HexagonCoordinates Round(FractionalHexagonCoordinates coordinates)
