@@ -90,6 +90,19 @@ namespace Osryden.HexagonFramework
             return clockwise ? new HexagonCoordinates(coordinates.R, coordinates.S) : new HexagonCoordinates(-coordinates.S, -coordinates.Q);
         }
 
+        public static HexagonCoordinates Rotate(HexagonCoordinates coordinates, bool clockwise, int rotations)
+        {
+            if (rotations < 1)
+                throw new ArgumentOutOfRangeException(nameof(rotations), rotations, "The minimum value is 1.");
+
+            HexagonCoordinates result = coordinates;
+
+            for (int i = 0; i < rotations; i++)
+                result = Rotate(result, clockwise);
+
+            return result;
+        }
+
         public static HexagonCoordinates Round(FractionalHexagonCoordinates coordinates)
         {
             int q = Mathf.RoundToInt(coordinates.Q);
