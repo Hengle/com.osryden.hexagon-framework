@@ -6,12 +6,12 @@
     public enum HexagonOrientation
     {
         /// <summary>
-        /// Flat-topped hexagon orientation.
+        /// The flat-topped hexagon orientation.
         /// </summary>
         FlatTop = 0,
 
         /// <summary>
-        /// Pointy-topped hexagon orientation.
+        /// The pointy-topped hexagon orientation.
         /// </summary>
         PointyTop = 1
     }

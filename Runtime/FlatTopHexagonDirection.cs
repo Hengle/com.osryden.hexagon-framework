@@ -6,32 +6,32 @@
     public enum FlatTopHexagonDirection
     {
         /// <summary>
-        /// Represents the north direction of a flat-topped hexagon.
+        /// The north direction of a flat-topped hexagon.
         /// </summary>
         North = HexagonDirection.One,
 
         /// <summary>
-        /// Represents the northeast direction of a flat-topped hexagon.
+        /// The northeast direction of a flat-topped hexagon.
         /// </summary>
         Northeast = HexagonDirection.Two,
 
         /// <summary>
-        /// Represents the southeast direction of a flat-topped hexagon.
+        /// The southeast direction of a flat-topped hexagon.
         /// </summary>
         Southeast = HexagonDirection.Three,
 
         /// <summary>
-        /// Represents the south direction of a flat-topped hexagon.
+        /// The south direction of a flat-topped hexagon.
         /// </summary>
         South = HexagonDirection.Four,
 
         /// <summary>
-        /// Represents the southwest direction of a flat-topped hexagon.
+        /// The southwest direction of a flat-topped hexagon.
         /// </summary>
         Southwest = HexagonDirection.Five,
 
         /// <summary>
-        /// Represents the northwest direction of a flat-topped hexagon.
+        /// The northwest direction of a flat-topped hexagon.
         /// </summary>
         Northwest = HexagonDirection.Six
     }
