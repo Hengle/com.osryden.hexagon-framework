@@ -17,12 +17,21 @@ namespace Osryden.HexagonFramework
         }
 
         public static HexagonCoordinates Origin { get; } = new HexagonCoordinates(0, 0);
+
         public static HexagonCoordinates FlatTopNorthAdjacent { get; } = new HexagonCoordinates(0, 1);
         public static HexagonCoordinates FlatTopNortheastAdjacent { get; } = new HexagonCoordinates(1, 1);
         public static HexagonCoordinates FlatTopSoutheastAdjacent { get; } = new HexagonCoordinates(1, 0);
         public static HexagonCoordinates FlatTopSouthAdjacent { get; } = new HexagonCoordinates(0, -1);
         public static HexagonCoordinates FlatTopSouthwestAdjacent { get; } = new HexagonCoordinates(-1, -1);
         public static HexagonCoordinates FlatTopNorthwestAdjacent { get; } = new HexagonCoordinates(-1, 0);
+
+        public static HexagonCoordinates FlatTopNortheastDiagonal { get; } = new HexagonCoordinates(1, 2);
+        public static HexagonCoordinates FlatTopEastDiagonal { get; } = new HexagonCoordinates(2, 1);
+        public static HexagonCoordinates FlatTopSoutheastDiagonal { get; } = new HexagonCoordinates(1, -1);
+        public static HexagonCoordinates FlatTopSouthwestDiagonal { get; } = new HexagonCoordinates(-1, -2);
+        public static HexagonCoordinates FlatTopWestDiagonal { get; } = new HexagonCoordinates(-2, -1);
+        public static HexagonCoordinates FlatTopNorthwestDiagonal { get; } = new HexagonCoordinates(-1, 1);
+
         public static HexagonCoordinates PointyTopNortheastAdjacent { get; } = new HexagonCoordinates(1, 1);
         public static HexagonCoordinates PointyTopEastAdjacent { get; } = new HexagonCoordinates(1, 0);
         public static HexagonCoordinates PointyTopSoutheastAdjacent { get; } = new HexagonCoordinates(0, -1);
