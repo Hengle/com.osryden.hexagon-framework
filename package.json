@@ -11,5 +11,11 @@
     "repository": {
         "type": "git",
         "url": "git+https://github.com/osryden/com.osryden.hexagon-framework.git"
-    }
+    },
+    "samples": [{
+            "displayName": "Hexagon Model",
+            "description": "Contains a model of a hexagon.",
+            "path": "Samples~/HexagonModel"
+        }
+    ]
 }
