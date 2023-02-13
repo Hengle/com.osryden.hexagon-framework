@@ -12,14 +12,23 @@ namespace Osryden.HexagonFramework
         [SerializeField] private float m_Q;
         [SerializeField] private float m_R;
 
+        /// <summary>
+        /// Creates a <see cref="FractionalHexagonCoordinates"/> with the specified <paramref name="q"/> and <paramref name="r"/> coordinates.
+        /// </summary>
         public FractionalHexagonCoordinates(float q, float r)
         {
             m_Q = q;
             m_R = r;
         }
 
+        /// <summary>
+        /// Shorthand for <see cref="FractionalHexagonCoordinates"/>(0, 0).
+        /// </summary>
         public static FractionalHexagonCoordinates Origin { get; } = new FractionalHexagonCoordinates(0, 0);
 
+        /// <summary>
+        /// Returns the Q, R, S coordinates using an index of 0, 1, 2 respectively.
+        /// </summary>
         public float this[int index]
         {
             get
@@ -35,16 +44,37 @@ namespace Osryden.HexagonFramework
             }
         }
 
+        /// <summary>
+        /// The Q-axis coordinate.
+        /// </summary>
         public float Q => m_Q;
+
+        /// <summary>
+        /// The R-axis coordinate.
+        /// </summary>
         public float R => m_R;
+
+        /// <summary>
+        /// The S-axis coordinate.
+        /// </summary>
         public float S => -Q + R;
+
+        /// <summary>
+        /// The length of the Q, R, S coordinates.
+        /// </summary>
         public float Length => (Mathf.Abs(Q) + Mathf.Abs(R) + Mathf.Abs(S)) / 2;
 
+        /// <summary>
+        /// Returns the distance between two coordinates.
+        /// </summary>
         public static float Distance(FractionalHexagonCoordinates a, FractionalHexagonCoordinates b)
         {
             return (a - b).Length;
         }
 
+        /// <summary>
+        /// Returns the position of the specified <paramref name="coordinates"/> relative to the <paramref name="geometry"/>.
+        /// </summary>
         public static Vector3 Position(FractionalHexagonCoordinates coordinates, HexagonGeometry geometry)
         {
             float x = coordinates.Q * geometry.HorizontalDistance;
