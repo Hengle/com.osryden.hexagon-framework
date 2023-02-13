@@ -55,6 +55,19 @@ namespace Osryden.HexagonFramework
             return clockwise ? new FractionalHexagonCoordinates(coordinates.R, coordinates.S) : new FractionalHexagonCoordinates(-coordinates.S, -coordinates.Q);
         }
 
+        public static FractionalHexagonCoordinates Rotate(FractionalHexagonCoordinates coordinates, bool clockwise, int rotations)
+        {
+            if (rotations < 1)
+                throw new ArgumentOutOfRangeException(nameof(rotations), rotations, "The minimum value is 1.");
+
+            FractionalHexagonCoordinates result = coordinates;
+
+            for (int i = 0; i < rotations; i++)
+                result = Rotate(result, clockwise);
+
+            return result;
+        }
+
         public static FractionalHexagonCoordinates Lerp(FractionalHexagonCoordinates a, FractionalHexagonCoordinates b, float t)
         {
             return new FractionalHexagonCoordinates(Mathf.Lerp(a.Q, b.Q, t), Mathf.Lerp(a.R, b.R, t));
