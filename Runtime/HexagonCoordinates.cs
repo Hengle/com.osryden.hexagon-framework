@@ -17,6 +17,18 @@ namespace Osryden.HexagonFramework
         }
 
         public static HexagonCoordinates Origin { get; } = new HexagonCoordinates(0, 0);
+        public static HexagonCoordinates FlatTopNorthAdjacent { get; } = new HexagonCoordinates(0, 1);
+        public static HexagonCoordinates FlatTopNortheastAdjacent { get; } = new HexagonCoordinates(1, 1);
+        public static HexagonCoordinates FlatTopSoutheastAdjacent { get; } = new HexagonCoordinates(1, 0);
+        public static HexagonCoordinates FlatTopSouthAdjacent { get; } = new HexagonCoordinates(0, -1);
+        public static HexagonCoordinates FlatTopSouthwestAdjacent { get; } = new HexagonCoordinates(-1, -1);
+        public static HexagonCoordinates FlatTopNorthwestAdjacent { get; } = new HexagonCoordinates(-1, 0);
+        public static HexagonCoordinates PointyTopNortheastAdjacent { get; } = new HexagonCoordinates(1, 1);
+        public static HexagonCoordinates PointyTopEastAdjacent { get; } = new HexagonCoordinates(1, 0);
+        public static HexagonCoordinates PointyTopSoutheastAdjacent { get; } = new HexagonCoordinates(0, -1);
+        public static HexagonCoordinates PointyTopSouthwestAdjacent { get; } = new HexagonCoordinates(-1, -1);
+        public static HexagonCoordinates PointyTopWestAdjacent { get; } = new HexagonCoordinates(-1, 0);
+        public static HexagonCoordinates PointyTopNorthwestAdjacent { get; } = new HexagonCoordinates(0, 1);
 
         public int this[HexagonCoordinateAxis axis]
         {
@@ -47,12 +59,12 @@ namespace Osryden.HexagonFramework
         {
             switch (direction)
             {
-                case FlatTopHexagonDirection.North: return new HexagonCoordinates(0, 1);
-                case FlatTopHexagonDirection.Northeast: return new HexagonCoordinates(1, 1);
-                case FlatTopHexagonDirection.Southeast: return new HexagonCoordinates(1, 0);
-                case FlatTopHexagonDirection.South: return new HexagonCoordinates(0, -1);
-                case FlatTopHexagonDirection.Southwest: return new HexagonCoordinates(-1, -1);
-                case FlatTopHexagonDirection.Northwest: return new HexagonCoordinates(-1, 0);
+                case FlatTopHexagonDirection.North: return FlatTopNorthAdjacent;
+                case FlatTopHexagonDirection.Northeast: return FlatTopNortheastAdjacent;
+                case FlatTopHexagonDirection.Southeast: return FlatTopSoutheastAdjacent;
+                case FlatTopHexagonDirection.South: return FlatTopSouthAdjacent;
+                case FlatTopHexagonDirection.Southwest: return FlatTopSouthwestAdjacent;
+                case FlatTopHexagonDirection.Northwest: return FlatTopNorthwestAdjacent;
                 default:
                     throw new InvalidOperationException();
             }
@@ -62,12 +74,12 @@ namespace Osryden.HexagonFramework
         {
             switch (direction)
             {
-                case PointyTopHexagonDirection.Northeast: return new HexagonCoordinates(1, 1);
-                case PointyTopHexagonDirection.East: return new HexagonCoordinates(1, 0);
-                case PointyTopHexagonDirection.Southeast: return new HexagonCoordinates(0, -1);
-                case PointyTopHexagonDirection.Southwest: return new HexagonCoordinates(-1, -1);
-                case PointyTopHexagonDirection.West: return new HexagonCoordinates(-1, 0);
-                case PointyTopHexagonDirection.Northwest: return new HexagonCoordinates(0, 1);
+                case PointyTopHexagonDirection.Northeast: return PointyTopNortheastAdjacent;
+                case PointyTopHexagonDirection.East: return PointyTopEastAdjacent;
+                case PointyTopHexagonDirection.Southeast: return PointyTopSoutheastAdjacent;
+                case PointyTopHexagonDirection.Southwest: return PointyTopSouthwestAdjacent;
+                case PointyTopHexagonDirection.West: return PointyTopWestAdjacent;
+                case PointyTopHexagonDirection.Northwest: return PointyTopNorthwestAdjacent;
                 default:
                     throw new InvalidOperationException();
             }
