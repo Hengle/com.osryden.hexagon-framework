@@ -101,6 +101,41 @@ namespace Osryden.HexagonFramework
             }
         }
 
+        public static HexagonCoordinates Diagonal(HexagonDiagonal diagonal)
+        {
+            return Diagonal((FlatTopHexagonDiagonal)diagonal);
+        }
+
+        public static HexagonCoordinates Diagonal(FlatTopHexagonDiagonal diagonal)
+        {
+            switch (diagonal)
+            {
+                case FlatTopHexagonDiagonal.Northeast: return FlatTopNortheastDiagonal;
+                case FlatTopHexagonDiagonal.East: return FlatTopEastDiagonal;
+                case FlatTopHexagonDiagonal.Southeast: return FlatTopSoutheastDiagonal;
+                case FlatTopHexagonDiagonal.Southwest: return FlatTopSouthwestDiagonal;
+                case FlatTopHexagonDiagonal.West: return FlatTopWestDiagonal;
+                case FlatTopHexagonDiagonal.Northwest: return FlatTopNorthwestDiagonal;
+                default:
+                    throw new InvalidOperationException();
+            }
+        }
+
+        public static HexagonCoordinates Diagonal(PointyTopHexagonDiagonal diagonal)
+        {
+            switch (diagonal)
+            {
+                case PointyTopHexagonDiagonal.North: return PointyTopNorthDiagonal;
+                case PointyTopHexagonDiagonal.Northeast: return PointyTopNortheastDiagonal;
+                case PointyTopHexagonDiagonal.Southeast: return PointyTopSoutheastDiagonal;
+                case PointyTopHexagonDiagonal.South: return PointyTopSouthDiagonal;
+                case PointyTopHexagonDiagonal.Southwest: return PointyTopSouthwestDiagonal;
+                case PointyTopHexagonDiagonal.Northwest: return PointyTopNorthwestDiagonal;
+                default:
+                    throw new InvalidOperationException();
+            }
+        }
+
         public static HexagonCoordinates Reflect(HexagonCoordinates coordinates, HexagonCoordinateAxis axis)
         {
             switch (axis)
