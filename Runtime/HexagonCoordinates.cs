@@ -135,6 +135,14 @@ namespace Osryden.HexagonFramework
         }
 
         /// <summary>
+        /// Linearly iterpolates between two coordinates.
+        /// </summary>
+        public static HexagonCoordinates Lerp(HexagonCoordinates a, HexagonCoordinates b, float t)
+        {
+            return Round(FractionalHexagonCoordinates.Lerp(a, b, t));
+        }
+
+        /// <summary>
         /// Returns the distance between two coordinates.
         /// </summary>
         public static int Distance(HexagonCoordinates a, HexagonCoordinates b)
