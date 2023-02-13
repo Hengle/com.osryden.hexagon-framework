@@ -146,7 +146,7 @@ namespace Osryden.HexagonFramework
 
         public static implicit operator FractionalHexagonCoordinates(HexagonCoordinates value)
         {
-            return new HexagonCoordinates(value.Q, value.R);
+            return new FractionalHexagonCoordinates(value.Q, value.R);
         }
     }
 }
