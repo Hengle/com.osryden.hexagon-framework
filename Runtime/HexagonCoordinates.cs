@@ -8,7 +8,7 @@ namespace Osryden.HexagonFramework
     /// Representation of hexagon coordinates.
     /// </summary>
     [Serializable]
-    public struct HexagonCoordinates : IEquatable<HexagonCoordinates>
+    public struct HexagonCoordinates : IHexagonCoordinates<int>, IEquatable<HexagonCoordinates>
     {
         [SerializeField] private int m_Q;
         [SerializeField] private int m_R;

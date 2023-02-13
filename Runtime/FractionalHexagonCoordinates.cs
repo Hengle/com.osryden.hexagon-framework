@@ -7,7 +7,7 @@ namespace Osryden.HexagonFramework
     /// Representation of fractional hexagon coordinates.
     /// </summary>
     [Serializable]
-    public struct FractionalHexagonCoordinates : IEquatable<FractionalHexagonCoordinates>
+    public struct FractionalHexagonCoordinates : IHexagonCoordinates<float>, IEquatable<FractionalHexagonCoordinates>
     {
         [SerializeField] private float m_Q;
         [SerializeField] private float m_R;
