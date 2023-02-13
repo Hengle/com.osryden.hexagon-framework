@@ -180,6 +180,18 @@ namespace Osryden.HexagonFramework
         }
 
         /// <summary>
+        /// Returns all coordinates between <paramref name="a"/> and <paramref name="b"/>.
+        /// </summary>
+        public static IEnumerable<HexagonCoordinates> Line(HexagonCoordinates a, HexagonCoordinates b)
+        {
+            int distance = Distance(a, b);
+            float step = 1 / (float)Mathf.Max(distance, 1);
+
+            for (int i = 0; i <= distance; i++)
+                yield return Lerp(a, b, i * step);
+        }
+
+        /// <summary>
         /// Returns a line of coordinates of the specified <paramref name="length"/> in the <paramref name="direction"/> starting from <paramref name="origin"/>.
         /// </summary>
         public static IEnumerable<HexagonCoordinates> Line(HexagonCoordinates origin, HexagonCoordinates direction, int length)
