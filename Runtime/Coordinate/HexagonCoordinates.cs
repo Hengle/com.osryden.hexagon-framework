@@ -137,6 +137,16 @@ namespace Osryden.HexagonFramework
             }
         }
 
+        public static HexagonCoordinates Min(HexagonCoordinates a, HexagonCoordinates b)
+        {
+            return new HexagonCoordinates(Mathf.Min(a.Q, b.Q), Mathf.Min(a.R, b.R));
+        }
+
+        public static HexagonCoordinates Max(HexagonCoordinates a, HexagonCoordinates b)
+        {
+            return new HexagonCoordinates(Mathf.Max(a.Q, b.Q), Mathf.Max(a.R, b.R));
+        }
+
         public static HexagonCoordinates Reflect(HexagonCoordinates coordinates, HexagonCoordinateAxis axis)
         {
             switch (axis)
