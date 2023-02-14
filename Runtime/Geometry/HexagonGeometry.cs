@@ -54,7 +54,7 @@ namespace Osryden.HexagonFramework
         public static Vector3 Vertex(float size, float angle, int index)
         {
             if ((index < 0) || (index >= VERTICES))
-                throw new ArgumentOutOfRangeException(nameof(index), index, $"The value ");
+                throw new ArgumentOutOfRangeException(nameof(index), index, $"The value has to be between 0 and {VERTICES - 1}.");
 
             float degrees = (60 * index) - angle;
             float radians = Mathf.PI / 180 * degrees;
