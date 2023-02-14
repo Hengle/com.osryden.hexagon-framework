@@ -29,16 +29,19 @@ namespace Osryden.HexagonFramework
             get => m_Orientation;
             set => m_Orientation = value;
         }
+
         public float Size
         {
             get => m_Size;
             set => m_Size = value;
         }
+
         public float Angle => OrientationAngle(Orientation);
         public float Width => Size * 2;
         public float Height => Size * Mathf.Sqrt(3);
         public float HorizontalDistance => Width * 3 / 4;
         public float VerticalDistance => Height;
+
         public IEnumerable<Vector3> Vertices
         {
             get
