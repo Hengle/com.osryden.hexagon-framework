@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 
 namespace Osryden.HexagonFramework
 {
     [Serializable]
-    public struct FractionalHexagonCoordinates : IEquatable<FractionalHexagonCoordinates>
+    public struct FractionalHexagonCoordinates : IEquatable<FractionalHexagonCoordinates>, IFormattable
     {
         [SerializeField] private float m_Q;
         [SerializeField] private float m_R;
@@ -115,7 +116,18 @@ namespace Osryden.HexagonFramework
 
         public override string ToString()
         {
-            return $"({Q}, {R}, {S})";
+            return ToString(null, null);
+        }
+
+        public string ToString(string format)
+        {
+            return ToString(format, null);
+        }
+
+        public string ToString(string format, IFormatProvider formatProvider)
+        {
+            formatProvider ??= CultureInfo.InvariantCulture.NumberFormat;
+            return string.Format("({0}, {1}, {2})", Q.ToString(format, formatProvider), R.ToString(format, formatProvider), S.ToString(format, formatProvider));
         }
 
         public static FractionalHexagonCoordinates operator +(FractionalHexagonCoordinates left, FractionalHexagonCoordinates right)
