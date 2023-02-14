@@ -385,6 +385,11 @@ namespace Osryden.HexagonFramework
             return new HexagonCoordinates(left.Q * right, left.R * right);
         }
 
+        public static HexagonCoordinates operator /(HexagonCoordinates left, int right)
+        {
+            return new HexagonCoordinates(left.Q / right, left.R / right);
+        }
+
         public static bool operator ==(HexagonCoordinates left, HexagonCoordinates right)
         {
             return (left.Q == right.Q) && (left.R == right.R);
