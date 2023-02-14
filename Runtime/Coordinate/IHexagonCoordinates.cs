@@ -9,9 +9,4 @@
         T S { get; }
         T Length { get; }
     }
-
-    public interface IHexagonTile
-    {
-        HexagonCoordinates Coordinates { get; }
-    }
 }
