@@ -290,8 +290,8 @@ namespace Osryden.HexagonFramework
 
         public static IEnumerable<HexagonCoordinates> Range(HexagonCoordinates center, int range)
         {
-            if (range < 1)
-                throw new ArgumentOutOfRangeException(nameof(range), range, "The minimum value is 1.");
+            if (range < 0)
+                throw new ArgumentOutOfRangeException(nameof(range), range, "The minimum value is 0.");
 
             for (int q = -range; q <= range; q++)
                 for (int r = Mathf.Max(-range, q - range); r <= Mathf.Min(range, q + range); r++)
