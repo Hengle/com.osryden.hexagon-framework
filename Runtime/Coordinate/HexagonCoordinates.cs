@@ -355,6 +355,11 @@ namespace Osryden.HexagonFramework
             return string.Format("({0}, {1}, {2})", Q.ToString(format, formatProvider), R.ToString(format, formatProvider), S.ToString(format, formatProvider));
         }
 
+        public static HexagonCoordinates operator -(HexagonCoordinates value)
+        {
+            return new HexagonCoordinates(-value.Q, -value.R);
+        }
+
         public static HexagonCoordinates operator +(HexagonCoordinates left, HexagonCoordinates right)
         {
             return new HexagonCoordinates(left.Q + right.Q, left.R + right.R);
