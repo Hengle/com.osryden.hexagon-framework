@@ -1,11 +1,5 @@
 ﻿namespace Osryden.HexagonFramework
 {
-    public enum HexagonOrientation
-    {
-        FlatTop,
-        PointyTop
-    }
-
     public enum HexagonCoordinateAxis
     {
         Q,
