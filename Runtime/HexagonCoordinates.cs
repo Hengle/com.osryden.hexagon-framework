@@ -239,9 +239,11 @@ namespace Osryden.HexagonFramework
         {
             int distance = Distance(a, b);
             float step = 1 / (float)Mathf.Max(distance, 1);
+            var aNudge = new FractionalHexagonCoordinates(a.Q + 1e-6f, a.R + 1e-6f);
+            var bNudge = new FractionalHexagonCoordinates(b.Q + 1e-6f, b.R + 1e-6f);
 
             for (int i = 0; i <= distance; i++)
-                yield return Lerp(a, b, i * step);
+                yield return Lerp(aNudge, bNudge, i * step);
         }
 
         public static IEnumerable<HexagonCoordinates> Line(HexagonCoordinates origin, int length, HexagonCoordinates direction)
