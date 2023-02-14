@@ -190,6 +190,11 @@ namespace Osryden.HexagonFramework
 
         public static HexagonCoordinates Lerp(HexagonCoordinates a, HexagonCoordinates b, float t)
         {
+            return Lerp((FractionalHexagonCoordinates)a, (FractionalHexagonCoordinates)b, t);
+        }
+
+        public static HexagonCoordinates Lerp(FractionalHexagonCoordinates a, FractionalHexagonCoordinates b, float t)
+        {
             return Round(FractionalHexagonCoordinates.Lerp(a, b, t));
         }
 
