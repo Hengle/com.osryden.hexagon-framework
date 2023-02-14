@@ -365,6 +365,11 @@ namespace Osryden.HexagonFramework
             return new HexagonCoordinates(left.Q - right.Q, left.R - right.R);
         }
 
+        public static HexagonCoordinates operator *(HexagonCoordinates left, HexagonCoordinates right)
+        {
+            return new HexagonCoordinates(left.Q * right.Q, left.R * right.R);
+        }
+
         public static HexagonCoordinates operator *(int left, HexagonCoordinates right)
         {
             return new HexagonCoordinates(left * right.Q, left * right.R);
