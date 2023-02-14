@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Osryden.HexagonFramework
 {
     [Serializable]
-    public struct HexagonCoordinates : IHexagonCoordinates<int>, IEquatable<HexagonCoordinates>
+    public struct HexagonCoordinates : IEquatable<HexagonCoordinates>
     {
         [SerializeField] private int m_Q;
         [SerializeField] private int m_R;
