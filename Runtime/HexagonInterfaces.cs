@@ -19,6 +19,11 @@
         float VerticalDistance { get; }
     }
 
+    public interface IHexagonGeometry : IHexagonSize
+    {
+        HexagonOrientation Orientation { get; }
+    }
+
     public interface IHexagonTile
     {
         HexagonCoordinates Coordinates { get; }

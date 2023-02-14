@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Osryden.HexagonFramework
 {
     [Serializable]
-    public struct HexagonGeometry : IHexagonSize, IEquatable<HexagonGeometry>
+    public struct HexagonGeometry : IHexagonGeometry, IHexagonSize, IEquatable<HexagonGeometry>
     {
         public const int EDGES = 6;
         public const int VERTICES = 6;
