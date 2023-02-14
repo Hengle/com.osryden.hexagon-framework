@@ -140,6 +140,11 @@ namespace Osryden.HexagonFramework
             return new FractionalHexagonCoordinates(left.Q - right.Q, left.R - right.R);
         }
 
+        public static FractionalHexagonCoordinates operator *(FractionalHexagonCoordinates left, FractionalHexagonCoordinates right)
+        {
+            return new FractionalHexagonCoordinates(left.Q * right.Q, left.R * right.R);
+        }
+
         public static FractionalHexagonCoordinates operator *(float left, FractionalHexagonCoordinates right)
         {
             return new FractionalHexagonCoordinates(left * right.Q, left * right.R);
