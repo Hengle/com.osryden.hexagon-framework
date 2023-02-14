@@ -8,23 +8,26 @@ namespace Osryden.HexagonFramework.Editor
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-            FractionalHexagonCoordinates coordinates = (FractionalHexagonCoordinates)fieldInfo.GetValue(property.serializedObject.targetObject);
-
             SerializedProperty q = property.FindPropertyRelative("m_Q");
             SerializedProperty r = property.FindPropertyRelative("m_R");
 
             position = EditorGUI.PrefixLabel(position, GUIUtility.GetControlID(FocusType.Keyboard), label);
 
+            int indent = EditorGUI.indentLevel;
+            EditorGUI.indentLevel = 0;
+
             EditorGUIUtility.labelWidth = 13;
 
             float width = (position.width - 10) / 3;
-            EditorGUI.PropertyField(new Rect(position.x, position.y, width, position.height), q, new GUIContent(nameof(coordinates.Q)));
-            EditorGUI.PropertyField(new Rect(position.x + width + 5, position.y, width, position.height), r, new GUIContent(nameof(coordinates.R)));
+            EditorGUI.PropertyField(new Rect(position.x, position.y, width, position.height), q, new GUIContent("Q"));
+            EditorGUI.PropertyField(new Rect(position.x + width + 5, position.y, width, position.height), r, new GUIContent("R"));
 
             using (new EditorGUI.DisabledGroupScope(true))
             {
-                EditorGUI.TextField(new Rect(position.x + (width * 2) + 10, position.y, width, position.height), new GUIContent(nameof(coordinates.S)), coordinates.S.ToString());
+                EditorGUI.FloatField(new Rect(position.x + (width * 2) + 10, position.y, width, position.height), new GUIContent("S"), -q.floatValue + r.floatValue);
             }
+
+            EditorGUI.indentLevel = indent;
         }
     }
 }
