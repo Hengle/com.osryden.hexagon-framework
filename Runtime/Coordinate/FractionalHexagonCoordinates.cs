@@ -39,6 +39,16 @@ namespace Osryden.HexagonFramework
         public float S => -Q + R;
         public float Length => (Mathf.Abs(Q) + Mathf.Abs(R) + Mathf.Abs(S)) / 2;
 
+        public static FractionalHexagonCoordinates Min(FractionalHexagonCoordinates a, FractionalHexagonCoordinates b)
+        {
+            return new FractionalHexagonCoordinates(Mathf.Min(a.Q, b.Q), Mathf.Min(a.R, b.R));
+        }
+
+        public static FractionalHexagonCoordinates Max(FractionalHexagonCoordinates a, FractionalHexagonCoordinates b)
+        {
+            return new FractionalHexagonCoordinates(Mathf.Max(a.Q, b.Q), Mathf.Max(a.R, b.R));
+        }
+
         public static FractionalHexagonCoordinates Reflect(FractionalHexagonCoordinates coordinates, HexagonCoordinateAxis axis)
         {
             switch (axis)
