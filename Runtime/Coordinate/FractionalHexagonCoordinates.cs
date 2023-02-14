@@ -130,6 +130,11 @@ namespace Osryden.HexagonFramework
             return string.Format("({0}, {1}, {2})", Q.ToString(format, formatProvider), R.ToString(format, formatProvider), S.ToString(format, formatProvider));
         }
 
+        public static FractionalHexagonCoordinates operator -(FractionalHexagonCoordinates value)
+        {
+            return new FractionalHexagonCoordinates(-value.Q, -value.R);
+        }
+
         public static FractionalHexagonCoordinates operator +(FractionalHexagonCoordinates left, FractionalHexagonCoordinates right)
         {
             return new FractionalHexagonCoordinates(left.Q + right.Q, left.R + right.R);
