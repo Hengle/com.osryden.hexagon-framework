@@ -160,6 +160,11 @@ namespace Osryden.HexagonFramework
             return new FractionalHexagonCoordinates(left.Q * right, left.R * right);
         }
 
+        public static FractionalHexagonCoordinates operator /(FractionalHexagonCoordinates left, float right)
+        {
+            return new FractionalHexagonCoordinates(left.Q / right, left.R / right);
+        }
+
         public static bool operator ==(FractionalHexagonCoordinates left, FractionalHexagonCoordinates right)
         {
             return (left.Q == right.Q) && (left.R == right.R);
