@@ -19,7 +19,7 @@ namespace Osryden.HexagonFramework
 
         protected override HashSet<HexagonCoordinates> Shape()
         {
-            return HexagonCoordinates.Range(HexagonCoordinates.Origin, Size).ToHashSet();
+            return HexagonCoordinates.Spiral(HexagonCoordinates.Origin, Size).ToHashSet();
         }
     }
 }
