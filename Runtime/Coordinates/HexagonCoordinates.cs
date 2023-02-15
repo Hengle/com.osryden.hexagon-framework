@@ -14,6 +14,11 @@ namespace Osryden.HexagonFramework
         [SerializeField] private int m_Q;
         [SerializeField] private int m_R;
 
+        /// <summary>
+        /// Creates a new <see cref="HexagonCoordinates"/> with the specified <paramref name="q"/> and <paramref name="r"/> coordinates.
+        /// </summary>
+        /// <param name="q">The value of the <see cref="Q"/> coordinate.</param>
+        /// <param name="r">The value of the <see cref="R"/> coordinate.</param>
         public HexagonCoordinates(int q, int r)
         {
             m_Q = q;
