@@ -8,8 +8,8 @@ namespace Osryden.HexagonFramework
         THexagonTile this[HexagonCoordinates coordinates] { get; set; }
 
         int Count { get; }
-        ICollection<HexagonCoordinates> Coordinates { get; }
-        ICollection<THexagonTile> Tiles { get; }
+        IEnumerable<HexagonCoordinates> Coordinates { get; }
+        IEnumerable<THexagonTile> Tiles { get; }
 
         void Clear();
         bool ContainsCoordinates(HexagonCoordinates coordinates);
