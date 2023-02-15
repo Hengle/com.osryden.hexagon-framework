@@ -8,7 +8,7 @@ namespace Osryden.HexagonFramework
     [Serializable]
     public class HexagonalMapShape : HexagonMapShape
     {
-        [SerializeField] private int m_Size;
+        [SerializeField, Min(0)] private int m_Size;
 
         public HexagonalMapShape(HexagonCoordinates origin, int size) : base(origin)
         {
