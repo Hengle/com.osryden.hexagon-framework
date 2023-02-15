@@ -17,36 +17,142 @@ namespace Osryden.HexagonFramework
             m_R = r;
         }
 
+        /// <summary>
+        /// Gets the coordinates of the origin.
+        /// </summary>
         public static HexagonCoordinates Origin { get; } = new HexagonCoordinates(0, 0);
 
+        #region Adjacents
+
+        /// <summary>
+        /// Gets the coordinates to the north direction adjacent of the flat-top orientation.
+        /// </summary>
         public static HexagonCoordinates FlatTopNorthAdjacent { get; } = new HexagonCoordinates(0, 1);
+
+        /// <summary>
+        /// Gets the coordinates to the northeast direction adjacent of the flat-top orientation.
+        /// </summary>
         public static HexagonCoordinates FlatTopNortheastAdjacent { get; } = new HexagonCoordinates(1, 1);
+
+        /// <summary>
+        /// Gets the coordinates to the southeast direction adjacent of the flat-top orientation.
+        /// </summary>
         public static HexagonCoordinates FlatTopSoutheastAdjacent { get; } = new HexagonCoordinates(1, 0);
+
+        /// <summary>
+        /// Gets the coordinates to the south direction adjacent of the flat-top orientation.
+        /// </summary>
         public static HexagonCoordinates FlatTopSouthAdjacent { get; } = new HexagonCoordinates(0, -1);
+
+        /// <summary>
+        /// Gets the coordinates to the southwest direction adjacent of the flat-top orientation.
+        /// </summary>
         public static HexagonCoordinates FlatTopSouthwestAdjacent { get; } = new HexagonCoordinates(-1, -1);
+
+        /// <summary>
+        /// Gets the coordinates to the northwest direction adjacent of the flat-top orientation.
+        /// </summary>
         public static HexagonCoordinates FlatTopNorthwestAdjacent { get; } = new HexagonCoordinates(-1, 0);
 
-        public static HexagonCoordinates FlatTopNortheastDiagonal { get; } = new HexagonCoordinates(1, 2);
-        public static HexagonCoordinates FlatTopEastDiagonal { get; } = new HexagonCoordinates(2, 1);
-        public static HexagonCoordinates FlatTopSoutheastDiagonal { get; } = new HexagonCoordinates(1, -1);
-        public static HexagonCoordinates FlatTopSouthwestDiagonal { get; } = new HexagonCoordinates(-1, -2);
-        public static HexagonCoordinates FlatTopWestDiagonal { get; } = new HexagonCoordinates(-2, -1);
-        public static HexagonCoordinates FlatTopNorthwestDiagonal { get; } = new HexagonCoordinates(-1, 1);
-
+        /// <summary>
+        /// Gets the coordinates to the northeast direction adjacent of the pointy-top orientation.
+        /// </summary>
         public static HexagonCoordinates PointyTopNortheastAdjacent { get; } = new HexagonCoordinates(1, 1);
+
+        /// <summary>
+        /// Gets the coordinates to the east direction adjacent of the pointy-top orientation.
+        /// </summary>
         public static HexagonCoordinates PointyTopEastAdjacent { get; } = new HexagonCoordinates(1, 0);
+
+        /// <summary>
+        /// Gets the coordinates to the southeast direction adjacent of the pointy-top orientation.
+        /// </summary>
         public static HexagonCoordinates PointyTopSoutheastAdjacent { get; } = new HexagonCoordinates(0, -1);
+
+        /// <summary>
+        /// Gets the coordinates to the southwest direction adjacent of the pointy-top orientation.
+        /// </summary>
         public static HexagonCoordinates PointyTopSouthwestAdjacent { get; } = new HexagonCoordinates(-1, -1);
+
+        /// <summary>
+        /// Gets the coordinates to the west direction adjacent of the pointy-top orientation.
+        /// </summary>
         public static HexagonCoordinates PointyTopWestAdjacent { get; } = new HexagonCoordinates(-1, 0);
+
+        /// <summary>
+        /// Gets the coordinates to the northwest direction adjacent of the pointy-top orientation.
+        /// </summary>
         public static HexagonCoordinates PointyTopNorthwestAdjacent { get; } = new HexagonCoordinates(0, 1);
 
+        #endregion
+        #region Diagonals
+
+        /// <summary>
+        /// Gets the coordinates to the northeast direction diagonal of the flat-top orientation.
+        /// </summary>
+        public static HexagonCoordinates FlatTopNortheastDiagonal { get; } = new HexagonCoordinates(1, 2);
+
+        /// <summary>
+        /// Gets the coordinates to the east direction diagonal of the flat-top orientation.
+        /// </summary>
+        public static HexagonCoordinates FlatTopEastDiagonal { get; } = new HexagonCoordinates(2, 1);
+
+        /// <summary>
+        /// Gets the coordinates to the southeast direction diagonal of the flat-top orientation.
+        /// </summary>
+        public static HexagonCoordinates FlatTopSoutheastDiagonal { get; } = new HexagonCoordinates(1, -1);
+
+        /// <summary>
+        /// Gets the coordinates to the southwest direction diagonal of the flat-top orientation.
+        /// </summary>
+        public static HexagonCoordinates FlatTopSouthwestDiagonal { get; } = new HexagonCoordinates(-1, -2);
+
+        /// <summary>
+        /// Gets the coordinates to the west direction diagonal of the flat-top orientation.
+        /// </summary>
+        public static HexagonCoordinates FlatTopWestDiagonal { get; } = new HexagonCoordinates(-2, -1);
+
+        /// <summary>
+        /// Gets the coordinates to the northwest direction diagonal of the flat-top orientation.
+        /// </summary>
+        public static HexagonCoordinates FlatTopNorthwestDiagonal { get; } = new HexagonCoordinates(-1, 1);
+
+        /// <summary>
+        /// Gets the coordinates to the north direction diagonal of the pointy-top orientation.
+        /// </summary>
         public static HexagonCoordinates PointyTopNorthDiagonal { get; } = new HexagonCoordinates(1, 2);
+
+        /// <summary>
+        /// Gets the coordinates to the northeast direction diagonal of the pointy-top orientation.
+        /// </summary>
         public static HexagonCoordinates PointyTopNortheastDiagonal { get; } = new HexagonCoordinates(2, 1);
+
+        /// <summary>
+        /// Gets the coordinates to the southeast direction diagonal of the pointy-top orientation.
+        /// </summary>
         public static HexagonCoordinates PointyTopSoutheastDiagonal { get; } = new HexagonCoordinates(1, -1);
+
+        /// <summary>
+        /// Gets the coordinates to the south direction diagonal of the pointy-top orientation.
+        /// </summary>
         public static HexagonCoordinates PointyTopSouthDiagonal { get; } = new HexagonCoordinates(-1, -2);
+
+        /// <summary>
+        /// Gets the coordinates to the southwest direction diagonal of the pointy-top orientation.
+        /// </summary>
         public static HexagonCoordinates PointyTopSouthwestDiagonal { get; } = new HexagonCoordinates(-2, -1);
+
+        /// <summary>
+        /// Gets the coordinates to the northwest direction diagonal of the pointy-top orientation.
+        /// </summary>
         public static HexagonCoordinates PointyTopNorthwestDiagonal { get; } = new HexagonCoordinates(-1, 1);
 
+        #endregion
+
+        /// <summary>
+        /// Gets the coordinate at the specified <paramref name="axis"/>.
+        /// </summary>
+        /// <param name="axis">The axis of the coordinate to get.</param>
         public int this[HexagonCoordinateAxis axis]
         {
             get
@@ -62,9 +168,24 @@ namespace Osryden.HexagonFramework
             }
         }
 
+        /// <summary>
+        /// Gets Q-axis coordinate.
+        /// </summary>
         public int Q => m_Q;
+
+        /// <summary>
+        /// Gets R-axis coordinate.
+        /// </summary>
         public int R => m_R;
+
+        /// <summary>
+        /// Gets S-axis coordinate.
+        /// </summary>
         public int S => -Q + R;
+
+        /// <summary>
+        /// Gets the length of the coordinates.
+        /// </summary>
         public int Length => (Mathf.Abs(Q) + Mathf.Abs(R) + Mathf.Abs(S)) / 2;
 
         public static HexagonCoordinates Adjacent(HexagonDirection direction)
