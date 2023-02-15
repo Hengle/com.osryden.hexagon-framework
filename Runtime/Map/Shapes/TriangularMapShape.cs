@@ -7,7 +7,7 @@ namespace Osryden.HexagonFramework
     [Serializable]
     public class TriangularMapShape : HexagonMapShape
     {
-        [SerializeField] private int m_Size;
+        [SerializeField, Min(0)] private int m_Size;
         [SerializeField] private HexagonCoordinateAxis m_Axis;
 
         public TriangularMapShape(HexagonCoordinates origin, int size, HexagonCoordinateAxis axis) : base(origin)
