@@ -321,14 +321,17 @@ namespace Osryden.HexagonFramework
 
         public static IEnumerable<HexagonCoordinates> Spiral(HexagonCoordinates center, int radius)
         {
-            if (radius < 1)
-                throw new ArgumentOutOfRangeException(nameof(radius), radius, "The minimum value is 1.");
+            if (radius < 0)
+                throw new ArgumentOutOfRangeException(nameof(radius), radius, "The minimum value is 0.");
 
             yield return center;
 
-            for (int i = 1; i <= radius; i++)
-                foreach (HexagonCoordinates coordinates in Ring(center, i))
-                    yield return coordinates;
+            if (radius > 0)
+            {
+                for (int i = 1; i <= radius; i++)
+                    foreach (HexagonCoordinates coordinates in Ring(center, i))
+                        yield return coordinates;
+            }
         }
 
         public override bool Equals(object other)
