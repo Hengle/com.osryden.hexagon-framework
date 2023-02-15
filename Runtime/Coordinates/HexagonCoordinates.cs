@@ -172,17 +172,17 @@ namespace Osryden.HexagonFramework
         }
 
         /// <summary>
-        /// Gets Q-axis coordinate.
+        /// Gets the Q-axis coordinate.
         /// </summary>
         public int Q => m_Q;
 
         /// <summary>
-        /// Gets R-axis coordinate.
+        /// Gets the R-axis coordinate.
         /// </summary>
         public int R => m_R;
 
         /// <summary>
-        /// Gets S-axis coordinate.
+        /// Gets the S-axis coordinate.
         /// </summary>
         public int S => -Q + R;
 
