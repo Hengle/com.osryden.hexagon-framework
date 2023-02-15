@@ -5,6 +5,8 @@ namespace Osryden.HexagonFramework
     public class HexagonMap<THexagonTile> : IHexagonMap<THexagonTile>
         where THexagonTile : IHexagonTile
     {
+        public HexagonMap(HexagonMapShape shape) => throw new System.NotImplementedException();
+
         public THexagonTile this[HexagonCoordinates coordinates]
         {
             get => throw new System.NotImplementedException();
