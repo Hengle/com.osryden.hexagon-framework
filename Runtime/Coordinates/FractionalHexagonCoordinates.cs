@@ -45,17 +45,17 @@ namespace Osryden.HexagonFramework
         }
 
         /// <summary>
-        /// Gets Q-axis coordinate.
+        /// Gets the Q-axis coordinate.
         /// </summary>
         public float Q => m_Q;
 
         /// <summary>
-        /// Gets R-axis coordinate.
+        /// Gets the R-axis coordinate.
         /// </summary>
         public float R => m_R;
 
         /// <summary>
-        /// Gets S-axis coordinate.
+        /// Gets the S-axis coordinate.
         /// </summary>
         public float S => -Q + R;
 
