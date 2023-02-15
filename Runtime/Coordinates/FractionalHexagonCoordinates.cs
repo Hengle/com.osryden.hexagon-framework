@@ -14,6 +14,11 @@ namespace Osryden.HexagonFramework
         [SerializeField] private float m_Q;
         [SerializeField] private float m_R;
 
+        /// <summary>
+        /// Creates a new <see cref="FractionalHexagonCoordinates"/> with the specified <paramref name="q"/> and <paramref name="r"/> coordinates.
+        /// </summary>
+        /// <param name="q">The value of the <see cref="Q"/> coordinate.</param>
+        /// <param name="r">The value of the <see cref="R"/> coordinate.</param>
         public FractionalHexagonCoordinates(float q, float r)
         {
             m_Q = q;
