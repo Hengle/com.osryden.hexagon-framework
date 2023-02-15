@@ -8,6 +8,7 @@ namespace Osryden.HexagonFramework
     public abstract class HexagonMapShape : IEnumerable<HexagonCoordinates>, IEnumerable, ISerializationCallbackReceiver
     {
         [SerializeField] private HexagonCoordinates m_Origin;
+        [NonSerialized] private bool m_Initialized = false;
         [NonSerialized] private HashSet<HexagonCoordinates> m_Coordinates = null;
 
         protected HexagonMapShape(HexagonCoordinates origin)
@@ -21,7 +22,7 @@ namespace Osryden.HexagonFramework
         {
             get
             {
-                if (m_Coordinates == null)
+                if (!m_Initialized)
                     Initialize();
 
                 return m_Coordinates;
@@ -40,17 +41,22 @@ namespace Osryden.HexagonFramework
 
         void ISerializationCallbackReceiver.OnAfterDeserialize()
         {
-            Initialize();
+            m_Initialized = false;
         }
 
         void ISerializationCallbackReceiver.OnBeforeSerialize() { }
 
         private void Initialize()
         {
-            m_Coordinates = new HashSet<HexagonCoordinates>();
+            if (!m_Initialized)
+            {
+                m_Coordinates = new HashSet<HexagonCoordinates>();
 
-            foreach (HexagonCoordinates coordinates in Shape())
-                m_Coordinates.Add(Origin + coordinates);
+                foreach (HexagonCoordinates coordinates in Shape())
+                    m_Coordinates.Add(Origin + coordinates);
+
+                m_Initialized = true;
+            }
         }
 
         protected abstract HashSet<HexagonCoordinates> Shape();
