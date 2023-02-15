@@ -17,8 +17,15 @@ namespace Osryden.HexagonFramework
             m_R = r;
         }
 
+        /// <summary>
+        /// Gets the coordinates of the origin.
+        /// </summary>
         public static FractionalHexagonCoordinates Origin { get; } = new FractionalHexagonCoordinates(0, 0);
 
+        /// <summary>
+        /// Gets the coordinate at the specified <paramref name="axis"/>.
+        /// </summary>
+        /// <param name="axis">The axis of the coordinate to get.</param>
         public float this[HexagonCoordinateAxis axis]
         {
             get
@@ -34,9 +41,24 @@ namespace Osryden.HexagonFramework
             }
         }
 
+        /// <summary>
+        /// Gets Q-axis coordinate.
+        /// </summary>
         public float Q => m_Q;
+
+        /// <summary>
+        /// Gets R-axis coordinate.
+        /// </summary>
         public float R => m_R;
+
+        /// <summary>
+        /// Gets S-axis coordinate.
+        /// </summary>
         public float S => -Q + R;
+
+        /// <summary>
+        /// Gets the length of the coordinates.
+        /// </summary>
         public float Length => (Mathf.Abs(Q) + Mathf.Abs(R) + Mathf.Abs(S)) / 2;
 
         public static FractionalHexagonCoordinates Min(FractionalHexagonCoordinates a, FractionalHexagonCoordinates b)
