@@ -37,30 +37,40 @@ namespace Osryden.HexagonFramework
 
         protected override HashSet<HexagonCoordinates> Shape()
         {
-            var shape = new HashSet<HexagonCoordinates>();
-
             switch (Orientation)
             {
-                case HexagonOrientation.FlatTop:
-                    for (int q = -Left; q <= Right; q++)
-                    {
-                        int qOffset = Mathf.FloorToInt(q / 2f);
-
-                        for (int r = -Bottom + qOffset; r <= Top + qOffset; r++)
-                            shape.Add(new HexagonCoordinates(q, r));
-                    }
-                    break;
-                case HexagonOrientation.PointyTop:
-                    for (int r = -Bottom; r <= Top; r++)
-                    {
-                        int rOffset = Mathf.FloorToInt(r / 2f);
-
-                        for (int q = -Left + rOffset; q <= Right + rOffset; q++)
-                            shape.Add(new HexagonCoordinates(q, r));
-                    }
-                    break;
+                case HexagonOrientation.FlatTop: return FlatTopOrientationShape();
+                case HexagonOrientation.PointyTop: return PointyTopOrientationShape();
                 default:
                     throw new InvalidOperationException();
+            }
+        }
+
+        protected HashSet<HexagonCoordinates> FlatTopOrientationShape()
+        {
+            var shape = new HashSet<HexagonCoordinates>();
+
+            for (int q = -Left; q <= Right; q++)
+            {
+                int qOffset = Mathf.FloorToInt(q / 2f);
+
+                for (int r = -Bottom + qOffset; r <= Top + qOffset; r++)
+                    shape.Add(new HexagonCoordinates(q, r));
+            }
+
+            return shape;
+        }
+
+        protected HashSet<HexagonCoordinates> PointyTopOrientationShape()
+        {
+            var shape = new HashSet<HexagonCoordinates>();
+
+            for (int r = -Bottom; r <= Top; r++)
+            {
+                int rOffset = Mathf.FloorToInt(r / 2f);
+
+                for (int q = -Left + rOffset; q <= Right + rOffset; q++)
+                    shape.Add(new HexagonCoordinates(q, r));
             }
 
             return shape;
