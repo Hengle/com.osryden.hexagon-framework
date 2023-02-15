@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace Osryden.HexagonFramework
 {
+    /// <summary>
+    /// Represents cube coordinates for hexagons.
+    /// </summary>
     [Serializable]
     public struct HexagonCoordinates : IEquatable<HexagonCoordinates>, IFormattable
     {
