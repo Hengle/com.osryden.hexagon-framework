@@ -23,7 +23,14 @@ namespace Osryden.HexagonFramework
             get
             {
                 if (!m_Initialized)
-                    Initialize();
+                {
+                    m_Coordinates = new HashSet<HexagonCoordinates>();
+
+                    foreach (HexagonCoordinates coordinates in Shape())
+                        m_Coordinates.Add(Origin + coordinates);
+
+                    m_Initialized = true;
+                }
 
                 return m_Coordinates;
             }
@@ -45,19 +52,6 @@ namespace Osryden.HexagonFramework
         }
 
         void ISerializationCallbackReceiver.OnBeforeSerialize() { }
-
-        private void Initialize()
-        {
-            if (!m_Initialized)
-            {
-                m_Coordinates = new HashSet<HexagonCoordinates>();
-
-                foreach (HexagonCoordinates coordinates in Shape())
-                    m_Coordinates.Add(Origin + coordinates);
-
-                m_Initialized = true;
-            }
-        }
 
         protected abstract HashSet<HexagonCoordinates> Shape();
     }
