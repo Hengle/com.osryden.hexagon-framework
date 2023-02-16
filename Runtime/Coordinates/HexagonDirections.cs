@@ -72,13 +72,39 @@
         Northwest = HexagonDirection.Six
     }
 
+    /// <summary>
+    /// Represents the adjacents directions of a pointy-top hexagon.
+    /// </summary>
     public enum PointyTopHexagonDirection
     {
+        /// <summary>
+        /// Represents the northeast adjacent direction of a pointy-top hexagon.
+        /// </summary>
         Northeast = HexagonDirection.One,
+
+        /// <summary>
+        /// Represents the east adjacent direction of a pointy-top hexagon.
+        /// </summary>
         East = HexagonDirection.Two,
+
+        /// <summary>
+        /// Represents the southeast adjacent direction of a pointy-top hexagon.
+        /// </summary>
         Southeast = HexagonDirection.Three,
+
+        /// <summary>
+        /// Represents the southwest adjacent direction of a pointy-top hexagon.
+        /// </summary>
         Southwest = HexagonDirection.Four,
+
+        /// <summary>
+        /// Represents the west adjacent direction of a pointy-top hexagon.
+        /// </summary>
         West = HexagonDirection.Five,
+
+        /// <summary>
+        /// Represents the northwest adjacent direction of a pointy-top hexagon.
+        /// </summary>
         Northwest = HexagonDirection.Six
     }
 }
