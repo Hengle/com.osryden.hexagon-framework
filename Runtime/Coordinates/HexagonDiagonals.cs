@@ -72,13 +72,39 @@
         Northwest = HexagonDiagonal.Six
     }
 
+    /// <summary>
+    /// Represents the diagonals of a pointy-top hexagon.
+    /// </summary>
     public enum PointyTopHexagonDiagonal
     {
+        /// <summary>
+        /// Represents the north diagonal of a pointy-top hexagon.
+        /// </summary>
         North = HexagonDiagonal.One,
+
+        /// <summary>
+        /// Represents the northeast diagonal of a pointy-top hexagon.
+        /// </summary>
         Northeast = HexagonDiagonal.Two,
+
+        /// <summary>
+        /// Represents the southeast diagonal of a pointy-top hexagon.
+        /// </summary>
         Southeast = HexagonDiagonal.Three,
+
+        /// <summary>
+        /// Represents the south diagonal of a pointy-top hexagon.
+        /// </summary>
         South = HexagonDiagonal.Four,
+
+        /// <summary>
+        /// Represents the southwest diagonal of a pointy-top hexagon.
+        /// </summary>
         Southwest = HexagonDiagonal.Five,
+
+        /// <summary>
+        /// Represents the northwest diagonal of a pointy-top hexagon.
+        /// </summary>
         Northwest = HexagonDiagonal.Six
     }
 }
