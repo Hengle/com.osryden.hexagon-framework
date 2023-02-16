@@ -36,13 +36,39 @@
         Six
     }
 
+    /// <summary>
+    /// Represents the diagonals of a flat-top hexagon.
+    /// </summary>
     public enum FlatTopHexagonDiagonal
     {
+        /// <summary>
+        /// Represents the northeast diagonal of a flat-top hexagon.
+        /// </summary>
         Northeast = HexagonDiagonal.One,
+
+        /// <summary>
+        /// Represents the east diagonal of a flat-top hexagon.
+        /// </summary>
         East = HexagonDiagonal.Two,
+
+        /// <summary>
+        /// Represents the southeast diagonal of a flat-top hexagon.
+        /// </summary>
         Southeast = HexagonDiagonal.Three,
+
+        /// <summary>
+        /// Represents the southwest diagonal of a flat-top hexagon.
+        /// </summary>
         Southwest = HexagonDiagonal.Four,
+
+        /// <summary>
+        /// Represents the west diagonal of a flat-top hexagon.
+        /// </summary>
         West = HexagonDiagonal.Five,
+
+        /// <summary>
+        /// Represents the northwest diagonal of a flat-top hexagon.
+        /// </summary>
         Northwest = HexagonDiagonal.Six
     }
 
